@@ -3,17 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Chosen Palette: High-contrast black and white for readability, with a wine accent -->
-    <!-- Application Structure Plan: A thematic, single-page application designed for intuitive exploration. The structure starts with a strong vision (Hero), followed by key thematic sections: 'Admission' (모집 개요), 'Judo Techniques' (유도 기술 분류), 'About' (Why this major?), 'Faculty' (Infographic and profiles), 'Curriculum' (Interactive track exploration), 'Research' (Card-based themes), 'Careers' (Interactive chart and job roles), and 'Facilities' (Visual showcase). This non-linear, thematic structure is more engaging for prospective students, allowing them to jump to sections of interest via a sticky navigation bar. The goal is to create a narrative journey from high-level vision to tangible outcomes. -->
-    <!-- Visualization & Content Choices:
-        1. Report Info: Faculty Data -> Goal: Showcase faculty expertise and qualifications -> Viz/Method: Doughnut chart for degrees, Bar chart for expertise, and detailed profile cards -> Interaction: Static charts and scroll-based fade-in effects. Justification: Provides a clear, at-a-lance overview of the faculty's strengths in a visually engaging format.
-        2. Report Info: Curriculum Structure -> Goal: Explain the educational journey -> Viz/Method: A single list of all courses. No track buttons. Justification: Visually represents the progression from foundational to specialized knowledge, making a complex curriculum easy to grasp by presenting all courses in a single, integrated list.
-        3. Report Info: Career Prospects -> Goal: Showcase diverse and promising career paths -> Viz/Method: A single table with full details. No chart. Justification: Provides a clear, data-driven overview of graduate outcomes in a consolidated view, directly answering the "What can I do with this degree?" question in an easy-to-read format.
-        4. Report Info: Research Areas -> Goal: Highlight innovative research -> Viz/Method: HTML/CSS Card layout with icons -> Interaction: Hover effects for engagement. Justification: Breaks down complex research topics into digestible, visually appealing snippets.
-        5. Report Info: Judo Techniques -> Goal: Clearly categorize judo techniques for practical use -> Viz/Method: Structured HTML lists and cards for clear hierarchy. No charts. Justification: This format provides a static, easy-to-read reference that can be printed or viewed on mobile, which is ideal for a skills checklist.
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-    <title>융합학과 스포츠융합전공 | 미래 스포츠를 디자인하다</title>
+    <title>융합전공학과 스포츠융합전공 | 미래 스포츠를 디자인하다</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -101,33 +91,17 @@
         .text-accent {
             color: #6A0F2C;
         }
-        .header-logo {
-            height: 40px;
-        }
-        .nav-container {
-            width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-        .body-watermark {
-            background-image: url('https://i.imgur.com/PiC8T54.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
-            background-size: 50%;
-            opacity: 0.1;
-        }
     </style>
 </head>
 <body class="bg-gray-50 text-dark">
 
     <header id="header" class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-all duration-300">
-        <nav class="nav-container px-6 py-3 flex justify-between items-center relative">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-4">
                 <a href="#">
                     <img src="https://i.imgur.com/PiC8T54.png" alt="김포대학교 로고" class="h-10">
                 </a>
-                <a href="#" class="text-xl font-bold text-gray-900">융합학과 스포츠융합전공</a>
+                <a href="#" class="text-xl font-bold text-gray-900">융합전공학과 스포츠융합전공</a>
             </div>
             <div class="hidden md:flex space-x-8">
                 <a href="#admission" class="nav-link pb-1 text-gray-900">모집개요</a>
@@ -151,11 +125,12 @@
             <a href="#curriculum" class="block py-2 px-4 text-sm hover:bg-gray-200">교육과정</a>
             <a href="#research" class="block py-2 px-4 text-sm hover:bg-gray-200">연구분야</a>
             <a href="#careers" class="block py-2 px-4 text-sm hover:bg-gray-200">진로전망</a>
-                <a href="#facilities" class="block py-2 px-4 text-sm hover:bg-gray-200">시설안내</a>
+            <a href="#facilities" class="block py-2 px-4 text-sm hover:bg-gray-200">시설안내</a>
         </div>
     </header>
 
     <main class="relative z-10">
+        <div class="absolute inset-0 body-watermark" style="background-image: url('https://i.imgur.com/PiC8T54.png'); opacity: 0.05;"></div>
         <section id="home" class="h-screen bg-cover bg-center flex items-center justify-center text-light" style="background-image: url('https://placehold.co/1920x1080/2c3e50/ffffff?text=');">
             <div class="text-center bg-black bg-opacity-50 p-10 rounded-lg">
                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-light">미래 스포츠를 디자인하다</h1>
@@ -362,6 +337,16 @@
                         <p class="text-gray-700">스포츠 마케팅, 경영, 데이터 분석 능력을 갖춰 급성장하는 스포츠 산업을 이끌 리더를 키웁니다.</p>
                     </div>
                 </div>
+                <div class="mt-8 text-light text-base text-center fade-in">
+                    <h3 class="text-xl font-bold mb-2">무도 종목 단증 취득 및 진로</h3>
+                    <p>무도 종목 단증 취득이 가능하며, 졸업 후 다양한 분야로 취업 및 창업할 수 있습니다.</p>
+                    <ul class="list-disc list-inside space-y-1 mx-auto max-w-2xl mt-4">
+                        <li>2년제 졸업 시: 유도, 용무도, 크라쉬, 삼보, 킥복싱, 특공무술 등 총 14단 이상 승단이 가능합니다.</li>
+                        <li>4년제 심화과정 졸업 시: 동일 무도 종목으로 3~4단까지 승단이 가능합니다.</li>
+                        <li>이를 통해 무도 지도자, 경호원 등 다양한 분야로 취업 및 창업할 수 있습니다.</li>
+                        <li>각 무도 종목의 승단자는 대회에 참가하여 입상 시 교수님들의 후원으로 대회 입상 장학금(연말 일괄 지급)을 받을 수 있습니다.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -427,7 +412,7 @@
                         </div>
                         <div class="card">
                             <div class="flex justify-center items-center mb-4">
-                                <img src="https://i.imgur.com/VXPoqzJ.jpeg" alt="김진성 교수 사진" class="w-32 h-32 rounded-full object-cover">
+                                <img src="https://i.imgur.com/a/UELQhJu.jpeg" alt="김진성 교수 사진" class="w-32 h-32 rounded-full object-cover">
                             </div>
                             <h3 class="text-xl font-bold text-center text-accent">김진성 교수</h3>
                             <div class="text-left text-sm flex-grow mt-4">
@@ -442,8 +427,7 @@
                                     <li>유도 7단, 용무도 7단</li>
                                     <li>유도심판 1급, 지도자 1급</li>
                                     <li>스포츠심리상담사 3급</li>
-                                    <li>서울시 생활체육 유도 지도자협의회 회장</li>
-                                    <li>(사)한국스포츠복지진흥회 이사</li>
+                                    <li>경기조 크라쉬 연맹 회장</li>
                                     <li>메가유도클럽 대표</li>
                                 </ul>
                             </div>
@@ -604,6 +588,10 @@
                         <h3 class="text-xl font-bold mb-3 text-dark">무도스포츠 이용자 심리 및 행동 분석</h3>
                         <p class="text-gray-700">무도 수련자들의 심리적 변화와 행동 패턴을 과학적으로 분석하여 긍정적인 가치를 창출하는 연구를 수행합니다.</p>
                     </div>
+                    <div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay: 0.5s;">
+                        <h3 class="text-xl font-bold mb-3 text-dark">스포츠와 사회복지 연계 연구</h3>
+                        <p class="text-gray-700">스포츠 활동이 소외 계층의 삶의 질 향상과 사회 통합에 미치는 영향을 분석하고 실용적인 프로그램을 개발합니다.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -664,6 +652,12 @@
                                     <td class="p-4">생활스포츠지도사 (무도 종목), 전문스포츠지도사 (무도 종목), 무도 단증</td>
                                     <td class="p-4">무도 전문 체육관, 초중고/대학교 교사, 국군 및 경찰, 국제 무도 연맹/협회</td>
                                 </tr>
+                                <tr>
+                                    <td class="p-4 font-semibold rounded-bl-lg">사회복지</td>
+                                    <td class="p-4">스포츠복지사, 건강관리 전담 사회복지사, 지역사회 복지 프로그램 기획자</td>
+                                    <td class="p-4">사회복지사 2급 자격증</td>
+                                    <td class="p-4 rounded-br-lg">사회복지관, 지자체 복지 관련 부서, 스포츠 NGO, 재활 시설</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -698,7 +692,7 @@
     </main>
 
     <footer class="text-center p-6 bg-gray-800 text-white">
-        <p>&copy; 2026 융합학과. 최고의 교육으로 미래를 선도합니다.</p>
+        <p>&copy; 2026 융합전공학과. 최고의 교육으로 미래를 선도합니다.</p>
     </footer>
 
 

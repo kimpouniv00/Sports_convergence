@@ -10,87 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Noto Sans KR', 'Inter', sans-serif;
-            background-color: #f8f8f8;
-            color: #1a202c;
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 350px;
-            max-height: 400px;
-        }
-        .nav-link {
-            transition: color 0.3s, border-bottom-color 0.3s;
-            border-bottom: 2px solid transparent;
-        }
-        .nav-link:hover, .nav-link.active {
-            color: #6A0F2C;
-            border-bottom-color: #6A0F2C;
-        }
-        .section-title {
-            font-weight: 900;
-            font-size: 2.5rem;
-            line-height: 1.3;
-            color: #1a202c;
-        }
-        @media (min-width: 768px) {
-            .section-title {
-                font-size: 3rem;
-            }
-        }
-        .kpi-card {
-            background-color: #FFFFFF;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .gradient-text {
-            background: linear-gradient(to right, #6A0F2C, #90516A);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .card {
-            background-color: #ffffff;
-            border-radius: 1rem;
-            padding: 1.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .text-dark {
-            color: #1a202c;
-        }
-        .text-light {
-            color: #FFFFFF;
-        }
-        .bg-card {
-            background-color: #FFFFFF;
-        }
-        .bg-wine {
-            background-color: #6A0F2C;
-        }
-        .text-accent {
-            color: #6A0F2C;
-        }
+        body { font-family: 'Noto Sans KR','Inter',sans-serif; background:#f8f8f8; color:#1a202c; }
+        .chart-container { position:relative; width:100%; max-width:600px; margin:0 auto; height:350px; max-height:400px; }
+        .nav-link { transition: color .3s, border-bottom-color .3s; border-bottom:2px solid transparent; }
+        .nav-link:hover, .nav-link.active { color:#6A0F2C; border-bottom-color:#6A0F2C; }
+        .section-title { font-weight:900; font-size:2.5rem; line-height:1.3; color:#1a202c; }
+        @media (min-width:768px){ .section-title{ font-size:3rem; } }
+        .kpi-card { background:#fff; backdrop-filter:blur(10px); border:1px solid rgba(0,0,0,.05); }
+        .fade-in { opacity:0; transform:translateY(20px); transition:opacity .6s ease-out, transform .6s ease-out; }
+        .fade-in.visible { opacity:1; transform:translateY(0); }
+        .gradient-text { background:linear-gradient(to right,#6A0F2C,#90516A); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .card { background:#fff; border-radius:1rem; padding:1.5rem; box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05); transition:transform .3s ease, box-shadow .3s ease; height:100%; display:flex; flex-direction:column; }
+        .card:hover { transform:translateY(-5px); box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 10px 10px -5px rgba(0,0,0,.04); }
+        .text-dark{color:#1a202c;} .text-light{color:#fff;} .bg-card{background:#fff;} .bg-wine{background:#6A0F2C;} .text-accent{color:#6A0F2C;}
     </style>
 </head>
 <body class="bg-gray-50 text-dark">
@@ -98,9 +30,7 @@
     <header id="header" class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-4">
-                <a href="#">
-                    <img src="https://i.imgur.com/PiC8T54.png" alt="김포대학교 로고" class="h-10">
-                </a>
+                <a href="#"><img src="https://i.imgur.com/PiC8T54.png" alt="김포대학교 로고" class="h-10"></a>
                 <a href="#" class="text-xl font-bold text-gray-900">융합전공학과 스포츠융합전공</a>
             </div>
             <div class="hidden md:flex space-x-8">
@@ -114,7 +44,7 @@
                 <a href="#facilities" class="nav-link pb-1 text-gray-900">시설안내</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden focus:outline-none text-gray-900">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
             </button>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden bg-white text-gray-900">
@@ -130,8 +60,8 @@
     </header>
 
     <main class="relative z-10">
-        <div class="absolute inset-0 body-watermark" style="background-image: url('https://i.imgur.com/PiC8T54.png'); opacity: 0.05;"></div>
-        <section id="home" class="h-screen bg-cover bg-center flex items-center justify-center text-light" style="background-image: url('https://placehold.co/1920x1080/2c3e50/ffffff?text=');">
+        <div class="absolute inset-0 body-watermark" style="background-image:url('https://i.imgur.com/PiC8T54.png');opacity:.05;"></div>
+        <section id="home" class="h-screen bg-cover bg-center flex items-center justify-center text-light" style="background-image:url('https://placehold.co/1920x1080/2c3e50/ffffff?text=');">
             <div class="text-center bg-black bg-opacity-50 p-10 rounded-lg">
                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-light">미래 스포츠를 디자인하다</h1>
                 <p class="text-lg md:text-2xl font-light text-light">기술, 과학, 비즈니스, 그리고 무도까지 융합하여 인간의 한계를 넘어섭니다.</p>
@@ -150,13 +80,13 @@
                             <li><strong>수시 1차:</strong> 2025.09.08(월) ~ 09.30(화)</li>
                         </ul>
                     </div>
-                    <div class="card p-8 rounded-xl shadow-lg fade-in" style="transition-delay: 0.2s;">
+                    <div class="card p-8 rounded-xl shadow-lg fade-in" style="transition-delay:.2s;">
                         <h3 class="text-2xl font-bold mb-4 text-dark">모집 인원</h3>
                         <ul class="text-left text-gray-700 space-y-2">
                             <li><strong>수시 1차:</strong> 50명</li>
                         </ul>
                     </div>
-                    <div class="card p-8 rounded-xl shadow-lg fade-in" style="transition-delay: 0.4s;">
+                    <div class="card p-8 rounded-xl shadow-lg fade-in" style="transition-delay:.4s;">
                         <h3 class="text-2xl font-bold mb-4 text-dark">상담 문의</h3>
                         <ul class="text-left text-gray-700 space-y-2">
                             <li><strong>김진성 교수:</strong> 010-3314-1047</li>
@@ -189,48 +119,19 @@
                             <div>
                                 <h3 class="list-title">누르기</h3>
                                 <ul class="list-disc list-inside space-y-1">
-                                    <li>고쳐곁누르기</li>
-                                    <li>곁누르기</li>
-                                    <li>뒤곁누르기</li>
-                                    <li>역곁누르기</li>
-                                    <li>어깨누르기</li>
-                                    <li>위누르기</li>
-                                    <li>가로누르기</li>
-                                    <li>세로누르기</li>
-                                    <li>삼각누르기</li>
-                                    <li>위고쳐누르기</li>
-                                    <li>모로누르기</li>
+                                    <li>고쳐곁누르기</li><li>곁누르기</li><li>뒤곁누르기</li><li>역곁누르기</li><li>어깨누르기</li><li>위누르기</li><li>가로누르기</li><li>세로누르기</li><li>삼각누르기</li><li>위고쳐누르기</li><li>모로누르기</li>
                                 </ul>
                             </div>
                             <div>
                                 <h3 class="list-title">조르기</h3>
                                 <ul class="list-disc list-inside space-y-1">
-                                    <li>외십자조르기</li>
-                                    <li>역십자조르기</li>
-                                    <li>양손조르기</li>
-                                    <li>주먹조르기</li>
-                                    <li>맨손조르기</li>
-                                    <li>안아조르기</li>
-                                    <li>죽지걸어조르기</li>
-                                    <li>삼각조르기</li>
-                                    <li>외깃안아조르기</li>
-                                    <li>소매깃잡고조르기</li>
-                                    <li>한손조르기</li>
+                                    <li>외십자조르기</li><li>역십자조르기</li><li>양손조르기</li><li>주먹조르기</li><li>맨손조르기</li><li>안아조르기</li><li>죽지걸어조르기</li><li>삼각조르기</li><li>외깃안아조르기</li><li>소매깃잡고조르기</li><li>한손조르기</li>
                                 </ul>
                             </div>
                             <div>
                                 <h3 class="list-title">꺾기</h3>
                                 <ul class="list-disc list-inside space-y-1">
-                                    <li>팔얽어비틀기</li>
-                                    <li>팔가로누워꺾기</li>
-                                    <li>어깨대팔꿈치꺾기</li>
-                                    <li>무릎대팔꺾기</li>
-                                    <li>손대팔꺾기</li>
-                                    <li>배대팔꺾기</li>
-                                    <li>다리대팔꺾기</li>
-                                    <li>겨드랑이대팔꺾기</li>
-                                    <li>삼각팔꺾기</li>
-                                    <li>다리얽어비틀기</li>
+                                    <li>팔얽어비틀기</li><li>팔가로누워꺾기</li><li>어깨대팔꿈치꺾기</li><li>무릎대팔꺾기</li><li>손대팔꺾기</li><li>배대팔꺾기</li><li>다리대팔꺾기</li><li>겨드랑이대팔꺾기</li><li>삼각팔꺾기</li><li>다리얽어비틀기</li>
                                 </ul>
                             </div>
                         </div>
@@ -243,66 +144,25 @@
                             <div>
                                 <h3 class="list-title">바로&모로누우며 메치는 기술</h3>
                                 <ul class="list-disc list-inside space-y-1">
-                                    <li>배대뒤치기</li>
-                                    <li>누우면서던지기</li>
-                                    <li>안오금띄기</li>
-                                    <li>뒤집어넘기기</li>
-                                    <li>끌어누우며뒤집기</li>
-                                    <li>모로걸기</li>
-                                    <li>모로돌리기</li>
-                                    <li>모로띄기</li>
-                                    <li>오금대떨어뜨리기</li>
-                                    <li>허리안아돌리기</li>
-                                    <li>안(쪽)감아치기</li>
+                                    <li>배대뒤치기</li><li>누우면서던지기</li><li>안오금띄기</li><li>뒤집어넘기기</li><li>끌어누우며뒤집기</li><li>모로걸기</li><li>모로돌리기</li><li>모로띄기</li><li>오금대떨어뜨리기</li><li>허리안아돌리기</li><li>안(쪽)감아치기</li>
                                 </ul>
                             </div>
                             <div>
                                 <h3 class="list-title">손기술</h3>
                                 <ul class="list-disc list-inside space-y-1">
-                                    <li>띄어치기</li>
-                                    <li>모로떨어뜨리기</li>
-                                    <li>어깨로메치기</li>
-                                    <li>한팔업어치기</li>
-                                    <li>업어치기</li>
-                                    <li>외깃업어치기</li>
-                                    <li>업어떨어뜨리기</li>
-                                    <li>빗당겨치기</li>
-                                    <li>외깃잡아업어후리기</li>
-                                    <li>띠잡아뒤집기</li>
-                                    <li>띠잡아떨어뜨리기</li>
+                                    <li>띄어치기</li><li>모로떨어뜨리기</li><li>어깨로메치기</li><li>한팔업어치기</li><li>업어치기</li><li>외깃업어치기</li><li>업어떨어뜨리기</li><li>빗당겨치기</li><li>외깃잡아업어후리기</li><li>띠잡아뒤집기</li><li>띠잡아떨어뜨리기</li>
                                 </ul>
                             </div>
                             <div>
                                 <h3 class="list-title">허리기술</h3>
                                 <ul class="list-disc list-inside space-y-1">
-                                    <li>허리껴치기</li>
-                                    <li>허리띄기</li>
-                                    <li>허리후리기</li>
-                                    <li>허리채기</li>
-                                    <li>허리튀기</li>
-                                    <li>허리굴리기</li>
-                                    <li>소매들어허리채기</li>
-                                    <li>뒤허리안아메치기</li>
+                                    <li>허리껴치기</li><li>허리띄기</li><li>허리후리기</li><li>허리채기</li><li>허리튀기</li><li>허리굴리기</li><li>소매들어허리채기</li><li>뒤허리안아메치기</li>
                                 </ul>
                             </div>
                             <div>
                                 <h3 class="list-title">발기술</h3>
                                 <ul class="list-disc list-inside space-y-1">
-                                    <li>나오는발치기</li>
-                                    <li>발뒤축후리기</li>
-                                    <li>발뒤축걸기</li>
-                                    <li>안뒤축후리기</li>
-                                    <li>안다리후리기</li>
-                                    <li>발목받치기</li>
-                                    <li>무릎대돌리기</li>
-                                    <li>발목후리기</li>
-                                    <li>모두걸기</li>
-                                    <li>다리대돌리기</li>
-                                    <li>허리대돌리기</li>
-                                    <li>허벅다리걸기</li>
-                                    <li>밭다리후리기</li>
-                                    <li>밭다리떨어뜨리기</li>
-                                    <li>두밭다리걸기</li>
+                                    <li>나오는발치기</li><li>발뒤축후리기</li><li>발뒤축걸기</li><li>안뒤축후리기</li><li>안다리후리기</li><li>발목받치기</li><li>무릎대돌리기</li><li>발목후리기</li><li>모두걸기</li><li>다리대돌리기</li><li>허리대돌리기</li><li>허벅다리걸기</li><li>밭다리후리기</li><li>밭다리떨어뜨리기</li><li>두밭다리걸기</li>
                                 </ul>
                             </div>
                         </div>
@@ -329,16 +189,16 @@
                     <h3 class="text-xl font-bold mb-2">무도 종목 단증 취득 및 진로</h3>
                     <p>무도 종목 단증 취득이 가능하며, 졸업 후 다양한 분야로 취업 및 창업할 수 있습니다.</p>
                     <ul class="list-disc list-inside space-y-1 mx-auto max-w-2xl mt-4">
-                        <li>2년제 졸업 시: 유도, 용무도, 크라쉬, 삼보, 킥복싱, 특공무술 등 총 14단 이상 승단이 가능합니다.</li>
-                        <li>4년제 심화과정 졸업 시: 동일 무도 종목으로 3~4단까지 승단이 가능합니다.</li>
-                        <li>이를 통해 무도 지도자, 경호원 등 다양한 분야로 취업 및 창업할 수 있습니다.</li>
-                        <li>각 무도 종목의 승단자는 대회에 참가하여 입상 시 교수님들의 후원으로 대회 입상 장학금(연말 일괄 지급)을 받을 수 있습니다.</li>
+                        <li>2년제 졸업 시: 유도, 용무도, 크라쉬, 삼보, 킥복싱, 특공무술 등 총 14단 이상 승단</li>
+                        <li>4년제 심화과정 졸업 시: 동일 무도 종목으로 3~4단까지 승단</li>
+                        <li>무도 지도자, 경호원 등 다양한 분야로 취업 및 창업 가능</li>
+                        <li>대회 입상 시 교수 후원 장학금(연말 일괄 지급) 수혜</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- 교수진 인포그래픽 섹션 -->
+        <!-- 교수진 -->
         <section id="faculty" class="py-20 lg:py-32 bg-card text-dark">
             <div class="container mx-auto px-6">
                 <header class="text-center mb-12 fade-in">
@@ -359,9 +219,7 @@
                     </div>
                     <div class="card justify-center items-center">
                         <h3 class="text-2xl font-bold text-dark mb-2">학위 분포</h3>
-                        <div class="chart-container">
-                            <canvas id="degreeChart"></canvas>
-                        </div>
+                        <div class="chart-container"><canvas id="degreeChart"></canvas></div>
                     </div>
                 </section>
 
@@ -375,9 +233,7 @@
                             <h3 class="text-xl font-bold text-center text-accent">이상규 교수</h3>
                             <div class="text-left text-sm flex-grow mt-4">
                                 <h4 class="font-semibold text-accent border-b pb-1 mb-2">경력</h4>
-                                <ul class="list-disc list-inside text-gray-700 space-y-1">
-                                    <li>부서장</li>
-                                </ul>
+                                <ul class="list-disc list-inside text-gray-700 space-y-1"><li>부서장</li></ul>
                             </div>
                         </div>
                         <div class="card">
@@ -387,9 +243,7 @@
                             <h3 class="text-xl font-bold text-center text-accent">반재근 교수</h3>
                             <div class="text-left text-sm flex-grow mt-4">
                                 <h4 class="font-semibold text-accent border-b pb-1 mb-2">학력</h4>
-                                <ul class="list-disc list-inside text-gray-700 space-y-1">
-                                    <li>체육학 박사</li>
-                                </ul>
+                                <ul class="list-disc list-inside text-gray-700 space-y-1"><li>체육학 박사</li></ul>
                                 <h4 class="font-semibold text-accent border-b pb-1 mb-2 mt-4">경력</h4>
                                 <ul class="list-disc list-inside text-gray-700 space-y-1">
                                     <li>성남시체육회 스포츠공정 위원장</li>
@@ -400,23 +254,18 @@
                         </div>
                         <div class="card">
                             <div class="flex justify-center items-center mb-4">
-                                <img src="https://i.imgur.com/g91j4Uq.jpeg" alt="김진성 교수 사진" class="w-32 h-32 rounded-full object-cover">
+                                <!-- ✅ 김진성 교수 사진: Imgur 링크 적용 -->
+                                <img src="https://i.imgur.com/GINdSdp.jpeg" alt="김진성 교수 사진" class="w-32 h-32 rounded-full object-cover" loading="lazy" referrerpolicy="no-referrer">
                             </div>
                             <h3 class="text-xl font-bold text-center text-accent">김진성 교수</h3>
                             <div class="text-left text-sm flex-grow mt-4">
                                 <h4 class="font-semibold text-accent border-b pb-1 mb-2">학력</h4>
                                 <ul class="list-disc list-inside text-gray-700 space-y-1">
-                                    <li>용인대학교 유도학과 졸업</li>
-                                    <li>용인대학교 경영학 석사</li>
-                                    <li>선문대학교 체육학 박사</li>
+                                    <li>용인대학교 유도학과 졸업</li><li>용인대학교 경영학 석사</li><li>선문대학교 체육학 박사</li>
                                 </ul>
                                 <h4 class="font-semibold text-accent border-b pb-1 mb-2 mt-4">경력</h4>
                                 <ul class="list-disc list-inside text-gray-700 space-y-1">
-                                    <li>유도 7단, 용무도 7단</li>
-                                    <li>유도심판 1급, 지도자 1급</li>
-                                    <li>스포츠심리상담사 3급</li>
-                                    <li>경기조 크라쉬 연맹 회장</li>
-                                    <li>메가유도클럽 대표</li>
+                                    <li>유도 7단, 용무도 7단</li><li>유도심판 1급, 지도자 1급</li><li>스포츠심리상담사 3급</li><li>경기조 크라쉬 연맹 회장</li><li>메가유도클럽 대표</li>
                                 </ul>
                             </div>
                         </div>
@@ -428,16 +277,11 @@
                             <div class="text-left text-sm flex-grow mt-4">
                                 <h4 class="font-semibold text-accent border-b pb-1 mb-2">학력</h4>
                                 <ul class="list-disc list-inside text-gray-700 space-y-1">
-                                    <li>용인대학교 유도학과 졸업</li>
-                                    <li>스포츠대학원 석사</li>
-                                    <li>선문대학교 체육학 박사</li>
+                                    <li>용인대학교 유도학과 졸업</li><li>스포츠대학원 석사</li><li>선문대학교 체육학 박사</li>
                                 </ul>
                                 <h4 class="font-semibold text-accent border-b pb-1 mb-2 mt-4">경력</h4>
                                 <ul class="list-disc list-inside text-gray-700 space-y-1">
-                                    <li>유도 7단, 용무도 7단</li>
-                                    <li>현) 여가복지진흥회 감사</li>
-                                    <li>현) 서울시 용무도협회 국제심판</li>
-                                    <li>현) 대한용무도협회 심판위원장</li>
+                                    <li>유도 7단, 용무도 7단</li><li>현) 여가복지진흥회 감사</li><li>현) 서울시 용무도협회 국제심판</li><li>현) 대한용무도협회 심판위원장</li>
                                 </ul>
                             </div>
                         </div>
@@ -449,19 +293,11 @@
                             <div class="text-left text-sm flex-grow mt-4">
                                 <h4 class="font-semibold text-accent border-b pb-1 mb-2">학력</h4>
                                 <ul class="list-disc list-inside text-gray-700 space-y-1">
-                                    <li>용인대학교 유도학과 졸업</li>
-                                    <li>용인대학교 체육교육학과 석사</li>
-                                    <li>용인대학교 무도학 박사 수료</li>
+                                    <li>용인대학교 유도학과 졸업</li><li>용인대학교 체육교육학과 석사</li><li>용인대학교 무도학 박사 수료</li>
                                 </ul>
                                 <h4 class="font-semibold text-accent border-b pb-1 mb-2 mt-4">경력</h4>
                                 <ul class="list-disc list-inside text-gray-700 space-y-1">
-                                    <li>유도 5단, 삼보 5단</li>
-                                    <li>유도 1급 심판, 지도자 1급</li>
-                                    <li>2011 세계군인유도선수권대회 개인전 3위</li>
-                                    <li>제92회 전국체육대회 개인전 2위</li>
-                                    <li>2012 춘계실업유도선수권대회 개인전 1위</li>
-                                    <li>경기도삼보연맹 회장</li>
-                                    <li>파이널유도멀티짐 프렌차이즈 대표</li>
+                                    <li>유도 5단, 삼보 5단</li><li>유도 1급 심판, 지도자 1급</li><li>2011 세계군인유도선수권대회 개인전 3위</li><li>제92회 전국체육대회 개인전 2위</li><li>2012 춘계실업유도선수권대회 개인전 1위</li><li>경기도삼보연맹 회장</li><li>파이널유도멀티짐 프렌차이즈 대표</li>
                                 </ul>
                             </div>
                         </div>
@@ -473,18 +309,11 @@
                             <div class="text-left text-sm flex-grow mt-4">
                                 <h4 class="font-semibold text-accent border-b pb-1 mb-2">학력</h4>
                                 <ul class="list-disc list-inside text-gray-700 space-y-1">
-                                    <li>용인대학교 유도학과 졸업</li>
-                                    <li>성균관대학교 스포츠경영 석사</li>
-                                    <li>성균관대학교 스포츠경영 박사 수료</li>
+                                    <li>용인대학교 유도학과 졸업</li><li>성균관대학교 스포츠경영 석사</li><li>성균관대학교 스포츠경영 박사 수료</li>
                                 </ul>
                                 <h4 class="font-semibold text-accent border-b pb-1 mb-2 mt-4">경력</h4>
                                 <ul class="list-disc list-inside text-gray-700 space-y-1">
-                                    <li>유도 5단, 삼보 4단, 크라쉬 4단</li>
-                                    <li>유도 2급 심판, 지도자 1급</li>
-                                    <li>전) 한국스포츠개발원 연구원</li>
-                                    <li>前 고려대학교 체육과 외래교수</li>
-                                    <li>前 서울시 생활체육 유도 지도자협의회 총무이사</li>
-                                    <li>아레나유도멀티짐 대표</li>
+                                    <li>유도 5단, 삼보 4단, 크라쉬 4단</li><li>유도 2급 심판, 지도자 1급</li><li>전) 한국스포츠개발원 연구원</li><li>前 고려대학교 체육과 외래교수</li><li>前 서울시 생활체육 유도 지도자협의회 총무이사</li><li>아레나유도멀티짐 대표</li>
                                 </ul>
                             </div>
                         </div>
@@ -494,10 +323,8 @@
                 <section class="mb-16 fade-in">
                     <h2 class="text-3xl font-bold text-center mb-10 text-dark">교수진 전문 분야</h2>
                     <div class="card">
-                        <p class="text-center text-gray-700 mb-4">교수진의 전문성은 전통 무도부터 현대 스포츠 과학까지 아우릅니다. 아래 차트는 각 분야에 대한 교수진의 분포를 보여줍니다.</p>
-                        <div class="chart-container">
-                            <canvas id="expertiseChart"></canvas>
-                        </div>
+                        <p class="text-center text-gray-700 mb-4">교수진의 전문성은 전통 무도부터 현대 스포츠 과학까지 아우릅니다.</p>
+                        <div class="chart-container"><canvas id="expertiseChart"></canvas></div>
                     </div>
                 </section>
             </div>
@@ -507,12 +334,10 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 fade-in">
                     <h2 class="section-title mb-4 text-light">성장을 위한 교육과정</h2>
-                    <p class="max-w-3xl mx-auto text-lg text-light">
-                        기초부터 심화까지, 이론과 실습이 조화된 체계적인 교육과정을 통해 융합 전문가로 성장합니다.
-                    </p>
+                    <p class="max-w-3xl mx-auto text-lg text-light">기초부터 심화까지, 이론과 실습이 조화된 체계적인 교육과정을 통해 융합 전문가로 성장합니다.</p>
                 </div>
 
-                <div class="mt-16 fade-in" style="transition-delay: 0.4s;">
+                <div class="mt-16 fade-in" style="transition-delay:.4s;">
                     <div id="curriculum-content" class="max-w-4xl mx-auto bg-card p-8 rounded-lg">
                         <h4 class="text-2xl font-bold mb-4 text-dark">교과목</h4>
                         <div class="grid md:grid-cols-2 gap-8 text-gray-700">
@@ -520,7 +345,7 @@
                                 <h5 class="font-bold mb-2 text-accent">1학년 1학기</h5>
                                 <ul class="list-disc list-inside space-y-1">
                                     <li>자기개발과 진로설계</li>
-                                    <li>유도, 무도기초체력, 스포츠지도 초급, 스포츠지도 중급, 트레이닝방법론</li>
+                                    <li>유도, 무도기초체력, 스포츠지도 초급/중급, 트레이닝방법론</li>
                                     <li>세계문화의 이해</li>
                                 </ul>
                             </div>
@@ -554,28 +379,28 @@
             <div class="container mx-auto px-6">
                 <header class="text-center mb-12 fade-in">
                     <h2 class="text-4xl md:text-6xl font-black gradient-text mb-2">혁신을 이끄는 연구</h2>
-                    <p class="max-w-3xl mx-auto text-lg text-gray-700">우리의 연구는 스포츠의 미래를 현실로 만듭니다. 세계적 수준의 교수진과 함께 인류의 삶에 기여하는 새로운 지식을 창출합니다.</p>
+                    <p class="max-w-3xl mx-auto text-lg text-gray-700">우리의 연구는 스포츠의 미래를 현실로 만듭니다.</p>
                 </header>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in">
                         <h3 class="text-xl font-bold mb-3 text-dark">AI 기반 선수 퍼포먼스 최적화</h3>
-                        <p class="text-gray-700">AI 모델을 통해 선수의 움직임, 생체 신호를 분석하여 개인 맞춤형 훈련 프로그램을 설계하고 경기력을 예측합니다.</p>
+                        <p class="text-gray-700">움직임·생체 신호 분석 기반 개인 맞춤형 훈련 설계 및 경기력 예측.</p>
                     </div>
-                    <div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay: 0.1s;">
+                    <div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay:.1s;">
                         <h3 class="text-xl font-bold mb-3 text-dark">빅데이터와 팬 경험 분석</h3>
-                        <p class="text-gray-700">경기 데이터, 소셜 미디어 데이터를 분석하여 팬 참여를 유도하는 새로운 콘텐츠와 비즈니스 전략을 도출합니다.</p>
+                        <p class="text-gray-700">경기/소셜 데이터 분석을 통한 팬 참여 향상과 비즈니스 전략.</p>
                     </div>
-                    <div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay: 0.2s;">
+                    <div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay:.2s;">
                         <h3 class="text-xl font-bold mb-3 text-dark">지속가능한 스포츠 장비/시설</h3>
-                        <p class="text-gray-700">친환경 신소재와 에너지 효율 기술을 적용하여 환경에 미치는 영향을 최소화하는 스포츠 장비와 시설을 설계합니다.</p>
+                        <p class="text-gray-700">친환경 소재·에너지 효율 기술로 환경 영향 최소화.</p>
                     </div>
-                     <div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay: 0.3s;">
+                    <div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay:.3s;">
                         <h3 class="text-xl font-bold mb-3 text-dark">E-스포츠와 인지 능력</h3>
-                        <p class="text-gray-700">E-스포츠 선수의 인지 능력, 반응 속도, 스트레스 반응을 분석하여 경기력 향상과 정신 건강 관리를 연구합니다.</p>
+                        <p class="text-gray-700">인지능력·반응속도·스트레스 분석으로 경기력 및 멘탈케어.</p>
                     </div>
-                    <div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay: 0.4s;">
-                        <h3 class="text-xl font-bold mb-3 text-dark">무도스포츠 이용자 심리 및 행동 분석</h3>
-                        <p class="text-gray-700">무도 수련자들의 심리적 변화와 행동 패턴을 과학적으로 분석하여 긍정적인 가치를 창출하는 연구를 수행합니다.</p>
+                    <div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay:.4s;">
+                        <h3 class="text-xl font-bold mb-3 text-dark">무도스포츠 이용자 심리/행동 분석</h3>
+                        <p class="text-gray-700">수련자의 심리 변화·행동 패턴 과학적 분석.</p>
                     </div>
                 </div>
             </div>
@@ -586,10 +411,10 @@
                 <div class="text-center mb-16 fade-in">
                     <h2 class="section-title mb-4 text-light">세상을 무대로 펼쳐질 미래</h2>
                     <p class="max-w-3xl mx-auto text-lg text-light">
-                        스포츠융합전공은 특정 직업에 국한되지 않는 무한한 가능성의 문을 엽니다. 졸업생들은 다양한 산업에서 혁신을 주도하는 리더로 활약하며, 특히 무도스포츠 분야의 전문 자격증을 취득하여 전문가로 활동할 수 있습니다.
+                        스포츠융합전공은 특정 직업에 국한되지 않는 무한한 가능성의 문을 엽니다.
                     </p>
                 </div>
-                <div class="fade-in" style="transition-delay: 0.2s;">
+                <div class="fade-in" style="transition-delay:.2s;">
                     <div class="bg-gray-50 p-8 rounded-lg">
                         <table class="w-full text-left table-auto text-dark">
                             <thead>
@@ -605,43 +430,43 @@
                                     <td class="p-4 font-semibold">프로 스포츠</td>
                                     <td class="p-4">퍼포먼스 분석가, 전력 분석 코치, 피지컬 코치</td>
                                     <td class="p-4">해당 없음</td>
-                                    <td class="p-4">국내외 프로 구단, 국가대표 선수촌, 스포츠 에이전시</td>
+                                    <td class="p-4">프로 구단, 국가대표 선수촌, 에이전시</td>
                                 </tr>
                                 <tr class="border-b border-gray-200 bg-gray-100">
                                     <td class="p-4 font-semibold">헬스케어/재활</td>
-                                    <td class="p-4">운동 재활 코디네이터, 임상 운동사, 디지털 헬스케어 전문가, 피트니스 컨설턴트</td>
+                                    <td class="p-4">임상 운동사, 디지털 헬스케어, 재활 코디네이터</td>
                                     <td class="p-4">생활스포츠지도사, 건강운동관리사</td>
-                                    <td class="p-4">대학병원 및 전문 재활 센터, 피트니스 체인, 헬스케어 앱 개발사, 보건 관련 공공기관</td>
+                                    <td class="p-4">병원·재활센터, 피트니스 체인, 보건 공공기관</td>
                                 </tr>
                                 <tr class="border-b border-gray-200">
                                     <td class="p-4 font-semibold">미디어/콘텐츠</td>
-                                    <td class="p-4">스포츠 데이터 저널리스트, 해설위원, 디지털 콘텐츠 기획자, 중계 기술 전문가</td>
+                                    <td class="p-4">데이터 저널리스트, 해설, 콘텐츠 기획, 중계 기술</td>
                                     <td class="p-4">해당 없음</td>
-                                    <td class="p-4">방송사, 디지털 스포츠 미디어, 온라인 동영상 서비스 (OTT)</td>
+                                    <td class="p-4">방송사, 디지털 스포츠 미디어, OTT</td>
                                 </tr>
                                 <tr class="border-b border-gray-200 bg-gray-100">
                                     <td class="p-4 font-semibold">교육/연구</td>
-                                    <td class="p-4">대학교수, 국책 연구소 연구원, 스포츠 과학 연구원</td>
+                                    <td class="p-4">대학교수, 연구원</td>
                                     <td class="p-4">해당 없음</td>
-                                    <td class="p-4">국내외 대학원, 한국스포츠정책과학원 (KISS), 기업 부설 연구소</td>
+                                    <td class="p-4">대학원, KISS, 기업 연구소</td>
                                 </tr>
                                 <tr class="border-b border-gray-200">
                                     <td class="p-4 font-semibold">창업 및 기타</td>
-                                    <td class="p-4">스포츠 테크 스타트업 창업, 독립 컨설턴트, 스포츠 정책 전문가</td>
+                                    <td class="p-4">스포츠 테크 창업, 정책/컨설팅</td>
                                     <td class="p-4">해당 없음</td>
-                                    <td class="p-4">자체 창업, 액셀러레이터/벤처캐피탈, 국제 스포츠 기구</td>
+                                    <td class="p-4">액셀러레이터, 국제 스포츠 기구</td>
                                 </tr>
                                 <tr class="border-b border-gray-200 bg-gray-100">
                                     <td class="p-4 font-semibold">무도스포츠</td>
-                                    <td class="p-4">무도스포츠 지도사, 무도심리 상담사, 국군/경찰 무도 교관, 국제대회 심판</td>
-                                    <td class="p-4">생활스포츠지도사 (무도 종목), 전문스포츠지도사 (무도 종목), 무도 단증</td>
-                                    <td class="p-4">무도 전문 체육관, 초중고/대학교 교사, 국군 및 경찰, 국제 무도 연맹/협회</td>
+                                    <td class="p-4">무도 지도사, 심판, 군·경 무도 교관</td>
+                                    <td class="p-4">생활·전문스포츠지도사(무도), 단증</td>
+                                    <td class="p-4">무도 체육관, 학교, 군·경, 국제 연맹</td>
                                 </tr>
                                 <tr>
                                     <td class="p-4 font-semibold rounded-bl-lg">사회복지</td>
-                                    <td class="p-4">스포츠복지사, 건강관리 전담 사회복지사, 지역사회 복지 프로그램 기획자</td>
-                                    <td class="p-4">사회복지사 2급 자격증</td>
-                                    <td class="p-4 rounded-br-lg">사회복지관, 지자체 복지 관련 부서, 스포츠 NGO, 재활 시설</td>
+                                    <td class="p-4">스포츠복지사, 지역 복지 프로그램 기획</td>
+                                    <td class="p-4">사회복지사 2급</td>
+                                    <td class="p-4 rounded-br-lg">사회복지관, 지자체, NGO</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -651,28 +476,24 @@
         </section>
 
         <section id="facilities" class="py-20 lg:py-32 bg-card text-dark">
-             <div class="container mx-auto px-6">
+            <div class="container mx-auto px-6">
                 <div class="text-center mb-16 fade-in">
                     <h2 class="section-title mb-4">우수한 교육 및 실습 환경</h2>
                     <p class="max-w-3xl mx-auto text-lg text-gray-700">
-                        학생들은 최고의 환경에서 아이디어를 현실로 만들고, 미래를 향한 실험을 계속합니다. 무도스포츠 관련 실습 및 기타 전문 실습을 위한 대형 전공 실습실과 쾌적한 학습 환경을 위한 대형 강의실을 갖추고 있습니다.
+                        무도스포츠 실습을 위한 대형 실습실, 쾌적한 대형 강의실을 갖추고 있습니다.
                     </p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                     <div class="relative overflow-hidden rounded-lg shadow-lg group fade-in">
                         <img src="https://placehold.co/600x400/5D4037/FFFFFF?text=Large+Major+Lab" alt="대형 전공 실습실" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-6">
-                            <h3 class="text-white text-2xl font-bold">대형 전공 실습실</h3>
-                        </div>
+                        <div class="absolute inset-0 bg-black/50 flex items-end p-6"><h3 class="text-white text-2xl font-bold">대형 전공 실습실</h3></div>
                     </div>
-                     <div class="relative overflow-hidden rounded-lg shadow-lg group fade-in" style="transition-delay: 0.1s;">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group fade-in" style="transition-delay:.1s;">
                         <img src="https://placehold.co/600x400/00695C/FFFFFF?text=Large+Lecture+Hall" alt="대형 강의실" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-6">
-                            <h3 class="text-white text-2xl font-bold">대형 강의실</h3>
-                        </div>
+                        <div class="absolute inset-0 bg-black/50 flex items-end p-6"><h3 class="text-white text-2xl font-bold">대형 강의실</h3></div>
                     </div>
                 </div>
-             </div>
+            </div>
         </section>
     </main>
 
@@ -680,157 +501,53 @@
         <p>&copy; 2024 융합전공학과. 최고의 교육으로 미래를 선도합니다.</p>
     </footer>
 
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
             const navLinks = document.querySelectorAll('nav a[href^="#"]');
-            navLinks.forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    if(mobileMenu.classList.contains('hidden') === false){
-                        mobileMenu.classList.add('hidden');
-                    }
-                });
-            });
+            navLinks.forEach(a => a.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                if(!mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+            }));
 
             const sections = document.querySelectorAll('section');
-            const observer = new IntersectionObserver((entries) => {
+            const io = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.querySelectorAll('.fade-in').forEach(el => {
-                            el.classList.add('visible');
-                        });
-                    }
+                    if (entry.isIntersecting) entry.target.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
                 });
             }, { threshold: 0.1 });
+            sections.forEach(section => io.observe(section));
 
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-
-            // 교수진 인포그래픽 스크립트
-            const tooltipTitleCallback = (tooltipItems) => {
-                const item = tooltipItems[0];
-                let label = item.chart.data.labels[item.dataIndex];
-                if (Array.isArray(label)) {
-                    return label.join(' ');
-                }
-                return label;
+            // 차트
+            const tooltipTitleCallback = (items) => {
+                const it = items[0]; const label = it.chart.data.labels[it.dataIndex];
+                return Array.isArray(label) ? label.join(' ') : label;
             };
-
             const wrapLabel = (label) => {
-                const maxLength = 16;
-                if (label.length <= maxLength) {
-                    return label;
-                }
-                const words = label.split(' ');
-                let lines = [];
-                let currentLine = '';
-                words.forEach(word => {
-                    if ((currentLine + word).length > maxLength) {
-                        lines.push(currentLine.trim());
-                        currentLine = '';
-                    }
-                    currentLine += word + ' ';
-                });
-                lines.push(currentLine.trim());
-                return lines;
+                const max = 16; if (label.length <= max) return label;
+                const words = label.split(' '); let lines = [], cur = '';
+                words.forEach(w => { if ((cur + w).length > max) { lines.push(cur.trim()); cur = ''; } cur += w + ' '; });
+                lines.push(cur.trim()); return lines;
             };
 
-            const degreeCtx = document.getElementById('degreeChart').getContext('2d');
-            new Chart(degreeCtx, {
+            new Chart(document.getElementById('degreeChart').getContext('2d'), {
                 type: 'doughnut',
-                data: {
-                    labels: ['박사', '석사/박사수료'],
-                    datasets: [{
-                        label: '학위 분포',
-                        data: [3, 3],
-                        backgroundColor: ['#6A0F2C', '#90516A'],
-                        borderColor: '#FFFFFF',
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                color: '#1a202c',
-                                font: {
-                                    size: 12
-                                }
-                            }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                title: tooltipTitleCallback
-                            }
-                        }
-                    }
-                }
+                data: { labels: ['박사','석사/박사수료'], datasets: [{ label:'학위 분포', data:[3,3], backgroundColor:['#6A0F2C','#90516A'], borderColor:'#fff', borderWidth:2 }] },
+                options: { responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'bottom', labels:{ color:'#1a202c', font:{ size:12 } } }, tooltip:{ callbacks:{ title:tooltipTitleCallback } } } }
             });
 
-            const expertiseCtx = document.getElementById('expertiseChart').getContext('2d');
-            const expertiseLabels = ['유도', '용무도', '삼보/크라쉬', '스포츠 경영/과학', '스포츠 심리'];
-            new Chart(expertiseCtx, {
+            const labels = ['유도','용무도','삼보/크라쉬','스포츠 경영/과학','스포츠 심리'];
+            new Chart(document.getElementById('expertiseChart').getContext('2d'), {
                 type: 'bar',
-                data: {
-                    labels: expertiseLabels.map(label => wrapLabel(label)),
-                    datasets: [{
-                        label: '전문가 수',
-                        data: [4, 2, 2, 2, 1],
-                        backgroundColor: ['#6A0F2C', '#90516A', '#BD8AA1', '#D4B4C5', '#E9D6E1'],
-                        borderColor: '#FFFFFF',
-                        borderWidth: 1,
-                        borderRadius: 5
-                    }]
-                },
+                data: { labels: labels.map(wrapLabel), datasets: [{ label:'전문가 수', data:[4,2,2,2,1], backgroundColor:['#6A0F2C','#90516A','#BD8AA1','#D4B4C5','#E9D6E1'], borderColor:'#fff', borderWidth:1, borderRadius:5 }] },
                 options: {
-                    indexAxis: 'y',
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        x: {
-                            beginAtZero: true,
-                            ticks: {
-                                stepSize: 1,
-                                color: '#1a202c'
-                            },
-                            grid: {
-                                display: false
-                            }
-                        },
-                        y: {
-                            ticks: {
-                                color: '#1a202c'
-                            },
-                            grid: {
-                                display: true,
-                                color: '#EAEAEA'
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            callbacks: {
-                                title: tooltipTitleCallback
-                            }
-                        }
-                    }
+                    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+                    scales:{ x:{ beginAtZero:true, ticks:{ stepSize:1, color:'#1a202c' }, grid:{ display:false } }, y:{ ticks:{ color:'#1a202c' }, grid:{ display:true, color:'#EAEAEA' } } },
+                    plugins:{ legend:{ display:false }, tooltip:{ callbacks:{ title:tooltipTitleCallback } } }
                 }
             });
         });

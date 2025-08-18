@@ -1,863 +1,839 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>융합전공학과 스포츠융합전공 | 미래 스포츠를 디자인하다</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            color: #1a202c;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #6A0F2C;
+            border-bottom-color: #6A0F2C;
+        }
+        .section-title {
+            font-weight: 900;
+            font-size: 2.5rem;
+            line-height: 1.3;
+            color: #1a202c;
+        }
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+        .kpi-card {
+            background-color: #FFFFFF;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #6A0F2C, #90516A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .text-dark {
+            color: #1a202c;
+        }
+        .text-light {
+            color: #FFFFFF;
+        }
+        .bg-card {
+            background-color: #FFFFFF;
+        }
+        .bg-wine {
+            background-color: #6A0F2C;
+        }
+        .text-accent {
+            color: #6A0F2C;
+        }
+    </style>
 </head>
-<body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="ko"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;융합전공학과 스포츠융합전공 | 미래 스포츠를 디자인하다&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;family=Noto+Sans+KR:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Noto Sans KR', 'Inter', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f8f8f8;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #1a202c;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.chart-container {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-left: auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-right: auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 350px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-height: 400px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.nav-link {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: color 0.3s, border-bottom-color 0.3s;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid transparent;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.nav-link:hover, .nav-link.active {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #6A0F2C;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom-color: #6A0F2C;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.3;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #1a202c;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 768px) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.section-title {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>font-size: 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.kpi-card {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #FFFFFF;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(10px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(0, 0, 0, 0.05);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.fade-in {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(20px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: opacity 0.6s ease-out, transform 0.6s ease-out;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.fade-in.visible {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(0);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.gradient-text {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(to right, #6A0F2C, #90516A);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>-webkit-background-clip: text;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>-webkit-text-fill-color: transparent;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.card {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s ease, box-shadow 0.3s ease;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.card:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-5px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.text-dark {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #1a202c;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.text-light {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #FFFFFF;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.bg-card {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #FFFFFF;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.bg-wine {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #6A0F2C;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.text-accent {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #6A0F2C;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body class="bg-gray-50 text-dark"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header id="header" class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-all duration-300"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;nav class="container mx-auto px-6 py-3 flex justify-between items-center"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#" class="text-xl font-bold text-gray-900"&gt;융합전공학과 스포츠융합전공&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hidden md:flex space-x-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#admission" class="nav-link pb-1 text-gray-900"&gt;모집개요&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#judo-techniques" class="nav-link pb-1 text-gray-900"&gt;유도기술&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#about" class="nav-link pb-1 text-gray-900"&gt;학과소개&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#faculty" class="nav-link pb-1 text-gray-900"&gt;교수진&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#curriculum" class="nav-link pb-1 text-gray-900"&gt;교육과정&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#research" class="nav-link pb-1 text-gray-900"&gt;연구분야&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#careers" class="nav-link pb-1 text-gray-900"&gt;진로전망&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#facilities" class="nav-link pb-1 text-gray-900"&gt;시설안내&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="mobile-menu-button" class="md:hidden focus:outline-none text-gray-900"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"&gt;&lt;/path&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="mobile-menu" class="hidden md:hidden bg-white text-gray-900"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#admission" class="block py-2 px-4 text-sm hover:bg-gray-200"&gt;모집개요&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#judo-techniques" class="block py-2 px-4 text-sm hover:bg-gray-200"&gt;유도기술&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-200"&gt;학과소개&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#faculty" class="block py-2 px-4 text-sm hover:bg-gray-200"&gt;교수진&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#curriculum" class="block py-2 px-4 text-sm hover:bg-gray-200"&gt;교육과정&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#research" class="block py-2 px-4 text-sm hover:bg-gray-200"&gt;연구분야&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#careers" class="block py-2 px-4 text-sm hover:bg-gray-200"&gt;진로전망&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#facilities" class="block py-2 px-4 text-sm hover:bg-gray-200"&gt;시설안내&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="relative z-10"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="absolute inset-0 body-watermark" style="background-image: url('https://i.imgur.com/PiC8T54.png'); opacity: 0.05;"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="home" class="h-screen bg-cover bg-center flex items-center justify-center text-light" style="background-image: url('https://placehold.co/1920x1080/2c3e50/ffffff?text=');"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center bg-black bg-opacity-50 p-10 rounded-lg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-light"&gt;미래 스포츠를 디자인하다&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-lg md:text-2xl font-light text-light"&gt;기술, 과학, 비즈니스, 그리고 무도까지 융합하여 인간의 한계를 넘어섭니다.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="admission" class="py-20 lg:py-32 bg-card text-dark"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto px-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-16"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="section-title mb-4 text-dark"&gt;✨ 2026학년도 신입생 모집 개요&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid md:grid-cols-3 gap-8 text-center"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card p-8 rounded-xl shadow-lg fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-bold mb-4 text-dark"&gt;접수 일정&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;ul class="text-left text-gray-700 space-y-2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;&lt;strong&gt;수시 1차:&lt;/strong&gt; 2025.09.08(월) ~ 09.30(화)&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card p-8 rounded-xl shadow-lg fade-in" style="transition-delay: 0.2s;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-bold mb-4 text-dark"&gt;모집 인원&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;ul class="text-left text-gray-700 space-y-2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;&lt;strong&gt;수시 1차:&lt;/strong&gt; 50명&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card p-8 rounded-xl shadow-lg fade-in" style="transition-delay: 0.4s;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-bold mb-4 text-dark"&gt;상담 문의&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;ul class="text-left text-gray-700 space-y-2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;&lt;strong&gt;김진성 교수:&lt;/strong&gt; 010-3314-1047&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;&lt;strong&gt;김원오 교수:&lt;/strong&gt; 010-3915-8702&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;&lt;strong&gt;조승권 교수:&lt;/strong&gt; 010-9297-0524&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;&lt;strong&gt;김도연 교수:&lt;/strong&gt; 010-8860-4829&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mt-8 text-center text-red-600 font-bold"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong&gt;수시 2차 및 정시 모집 인원과 일정은 추후 공지됩니다.&lt;/strong&gt;&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong&gt;수시 최초 합격자에게는 100만 원의 노트북 또는 60만 원의 장학금을 지급하며, 국가장학금까지 함께 받으면 등록금의 거의 전액을 면제받을 수 있습니다.&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="judo-techniques" class="py-20 lg:py-32 bg-card text-dark"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto px-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;header class="text-center mb-12"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="section-title mb-4 text-dark"&gt;유도 실기 시험 기술표&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="max-w-3xl mx-auto text-lg text-gray-700"&gt;김포대학교 유도 실기 시험에 필요한 기술 분류입니다.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- 굳히기 기술 --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h2 class="text-3xl font-bold text-center mb-6 text-[#6A0F2C]"&gt;굳히기 기술&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="list-title"&gt;누르기&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;고쳐곁누르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;곁누르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;뒤곁누르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;역곁누르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;어깨누르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;위누르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;가로누르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;세로누르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;삼각누르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;위고쳐누르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;모로누르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="list-title"&gt;조르기&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;외십자조르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;역십자조르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;양손조르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;주먹조르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;맨손조르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;안아조르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;죽지걸어조르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;삼각조르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;외깃안아조르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;소매깃잡고조르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;한손조르기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="list-title"&gt;꺾기&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;팔얽어비틀기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;팔가로누워꺾기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;어깨대팔꿈치꺾기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;무릎대팔꺾기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;손대팔꺾기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;배대팔꺾기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;다리대팔꺾기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;겨드랑이대팔꺾기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;삼각팔꺾기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;다리얽어비틀기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- 메치기 기술 --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h2 class="text-3xl font-bold text-center mb-6 text-[#6A0F2C]"&gt;메치기 기술&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="list-title"&gt;바로&amp;모로누우며 메치는 기술&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;배대뒤치기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;누우면서던지기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;안오금띄기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;뒤집어넘기기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;끌어누우며뒤집기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;모로걸기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;모로돌리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;모로띄기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;오금대떨어뜨리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;허리안아돌리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;안(쪽)감아치기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="list-title"&gt;손기술&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;띄어치기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;모로떨어뜨리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;어깨로메치기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;한팔업어치기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;업어치기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;외깃업어치기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;업어떨어뜨리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;빗당겨치기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;외깃잡아업어후리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;띠잡아뒤집기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;띠잡아떨어뜨리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="list-title"&gt;허리기술&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;허리껴치기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;허리띄기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;허리후리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;허리채기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;허리튀기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;허리굴리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;소매들어허리채기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;뒤허리안아메치기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="list-title"&gt;발기술&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;나오는발치기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;발뒤축후리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;발뒤축걸기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;안뒤축후리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;안다리후리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;발목받치기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;무릎대돌리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;발목후리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;모두걸기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;다리대돌리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;허리대돌리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;허벅다리걸기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;밭다리후리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;밭다리떨어뜨리기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;두밭다리걸기&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="about" class="py-20 lg:py-32 bg-wine text-light"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto px-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-16"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="section-title mb-4 text-light"&gt;왜 스포츠융합전공인가?&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="max-w-3xl mx-auto text-lg text-light"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>현대 스포츠는 단순한 경쟁을 넘어, 데이터, 기술, 건강 과학, 그리고 무도까지 결합된 거대한 산업으로 진화했습니다. 우리는 이 변화의 중심에서 새로운 가치를 창출하고 미래 스포츠 생태계를 이끌어갈 융합형 인재를 양성합니다.</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid md:grid-cols-3 gap-8 text-center"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="kpi-card p-8 rounded-xl shadow-lg fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-5xl mb-4 text-accent"&gt;🔬&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-2 text-dark"&gt;첨단 과학 기반&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-700"&gt;생체역학, 생리학, 데이터 과학을 기반으로 운동 능력을 정밀하게 분석하고 잠재력을 극대화합니다.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="kpi-card p-8 rounded-xl shadow-lg fade-in" style="transition-delay: 0.2s;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-5xl mb-4 text-accent"&gt;💻&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-2 text-dark"&gt;기술 혁신 융합&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-700"&gt;AI와 IoT 기술을 스포츠에 접목하여 새로운 훈련 방식, 장비, 팬 경험을 개발합니다.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="kpi-card p-8 rounded-xl shadow-lg fade-in" style="transition-delay: 0.4s;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-5xl mb-4 text-accent"&gt;📈&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-2 text-dark"&gt;산업 리더 양성&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-700"&gt;스포츠 마케팅, 경영, 데이터 분석 능력을 갖춰 급성장하는 스포츠 산업을 이끌 리더를 키웁니다.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mt-8 text-light text-base text-center fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-bold mb-2"&gt;무도 종목 단증 취득 및 진로&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;무도 종목 단증 취득이 가능하며, 졸업 후 다양한 분야로 취업 및 창업할 수 있습니다.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;ul class="list-disc list-inside space-y-1 mx-auto max-w-2xl mt-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;2년제 졸업 시: 유도, 용무도, 크라쉬, 삼보, 킥복싱, 특공무술 등 총 14단 이상 승단이 가능합니다.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;4년제 심화과정 졸업 시: 동일 무도 종목으로 3~4단까지 승단이 가능합니다.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;이를 통해 무도 지도자, 경호원 등 다양한 분야로 취업 및 창업할 수 있습니다.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;각 무도 종목의 승단자는 대회에 참가하여 입상 시 교수님들의 후원으로 대회 입상 장학금(연말 일괄 지급)을 받을 수 있습니다.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 교수진 인포그래픽 섹션 --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="faculty" class="py-20 lg:py-32 bg-card text-dark"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto px-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;header class="text-center mb-12 fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-4xl md:text-6xl font-black gradient-text mb-2"&gt;김포대학교 명품 교수진&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-lg text-gray-700"&gt;무도 및 스포츠 과학 분야를 선도하는 최고의 전문가들&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card justify-center items-center"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-bold text-dark mb-2"&gt;총 교수진&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-6xl font-extrabold text-accent"&gt;6&lt;span class="text-3xl ml-1"&gt;명&lt;/span&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-700 mt-2"&gt;각 분야 최고의 전문가&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card justify-center items-center"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-bold text-dark mb-2"&gt;총 보유 단 수&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-6xl font-extrabold text-accent"&gt;51&lt;span class="text-3xl ml-1"&gt;단&lt;/span&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-700 mt-2"&gt;유도, 용무도, 삼보 등 합산&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card justify-center items-center"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-bold text-dark mb-2"&gt;학위 분포&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="chart-container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;canvas id="degreeChart"&gt;&lt;/canvas&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;section class="mb-16 fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-3xl font-bold text-center mb-10 text-dark"&gt;교수진 프로필&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex justify-center items-center mb-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;img src="https://i.imgur.com/5zbALe7.jpeg" alt="이상규 교수 사진" class="w-32 h-32 rounded-full object-cover"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-bold text-center text-accent"&gt;이상규 교수&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-left text-sm flex-grow mt-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-semibold text-accent border-b pb-1 mb-2"&gt;경력&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside text-gray-700 space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;부서장&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex justify-center items-center mb-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;img src="https://i.imgur.com/ZdCaIDE.jpeg" alt="반재근 교수 사진" class="w-32 h-32 rounded-full object-cover"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-bold text-center text-accent"&gt;반재근 교수&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-left text-sm flex-grow mt-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-semibold text-accent border-b pb-1 mb-2"&gt;학력&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside text-gray-700 space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;체육학 박사&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-semibold text-accent border-b pb-1 mb-2 mt-4"&gt;경력&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside text-gray-700 space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;성남시체육회 스포츠공정 위원장&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;(사)한국스포츠복지진흥회 총재&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;(사)한국스포츠마사지협회 자문위원&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex justify-center items-center mb-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;img src="https://i.imgur.com/g91j4Uq.jpeg" alt="김진성 교수 사진" class="w-32 h-32 rounded-full object-cover"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-bold text-center text-accent"&gt;김진성 교수&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-left text-sm flex-grow mt-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-semibold text-accent border-b pb-1 mb-2"&gt;학력&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside text-gray-700 space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;용인대학교 유도학과 졸업&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;용인대학교 경영학 석사&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;선문대학교 체육학 박사&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-semibold text-accent border-b pb-1 mb-2 mt-4"&gt;경력&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside text-gray-700 space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;유도 7단, 용무도 7단&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;유도심판 1급, 지도자 1급&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;스포츠심리상담사 3급&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;경기조 크라쉬 연맹 회장&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;메가유도클럽 대표&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex justify-center items-center mb-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;img src="https://i.imgur.com/9HiFbPS.png" alt="김원오 교수 사진" class="w-32 h-32 rounded-full object-cover"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-bold text-center text-accent"&gt;김원오 교수&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-left text-sm flex-grow mt-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-semibold text-accent border-b pb-1 mb-2"&gt;학력&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside text-gray-700 space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;용인대학교 유도학과 졸업&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;스포츠대학원 석사&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;선문대학교 체육학 박사&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-semibold text-accent border-b pb-1 mb-2 mt-4"&gt;경력&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside text-gray-700 space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;유도 7단, 용무도 7단&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;현) 여가복지진흥회 감사&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;현) 서울시 용무도협회 국제심판&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;현) 대한용무도협회 심판위원장&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex justify-center items-center mb-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;img src="https://i.imgur.com/5A3mUmU.jpeg" alt="조승권 교수 사진" class="w-32 h-32 rounded-full object-cover"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-bold text-center text-accent"&gt;조승권 교수&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-left text-sm flex-grow mt-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-semibold text-accent border-b pb-1 mb-2"&gt;학력&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside text-gray-700 space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;용인대학교 유도학과 졸업&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;용인대학교 체육교육학과 석사&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;용인대학교 무도학 박사 수료&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-semibold text-accent border-b pb-1 mb-2 mt-4"&gt;경력&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside text-gray-700 space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;유도 5단, 삼보 5단&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;유도 1급 심판, 지도자 1급&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;2011 세계군인유도선수권대회 개인전 3위&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;제92회 전국체육대회 개인전 2위&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;2012 춘계실업유도선수권대회 개인전 1위&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;경기도삼보연맹 회장&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;파이널유도멀티짐 프렌차이즈 대표&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex justify-center items-center mb-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;img src="https://i.imgur.com/cZn5mC7.jpeg" alt="김도연 교수 사진" class="w-32 h-32 rounded-full object-cover"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-bold text-center text-accent"&gt;김도연 교수&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-left text-sm flex-grow mt-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-semibold text-accent border-b pb-1 mb-2"&gt;학력&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside text-gray-700 space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;용인대학교 유도학과 졸업&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;성균관대학교 스포츠경영 석사&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;성균관대학교 스포츠경영 박사 수료&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-semibold text-accent border-b pb-1 mb-2 mt-4"&gt;경력&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside text-gray-700 space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;유도 5단, 삼보 4단, 크라쉬 4단&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;유도 2급 심판, 지도자 1급&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;전) 한국스포츠개발원 연구원&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;前 고려대학교 체육과 외래교수&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;前 서울시 생활체육 유도 지도자협의회 총무이사&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;아레나유도멀티짐 대표&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;section class="mb-16 fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-3xl font-bold text-center mb-10 text-dark"&gt;교수진 전문 분야&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-center text-gray-700 mb-4"&gt;교수진의 전문성은 전통 무도부터 현대 스포츠 과학까지 아우릅니다. 아래 차트는 각 분야에 대한 교수진의 분포를 보여줍니다.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="chart-container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;canvas id="expertiseChart"&gt;&lt;/canvas&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="curriculum" class="py-20 lg:py-32 bg-wine text-light"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto px-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-16 fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="section-title mb-4 text-light"&gt;성장을 위한 교육과정&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="max-w-3xl mx-auto text-lg text-light"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>기초부터 심화까지, 이론과 실습이 조화된 체계적인 교육과정을 통해 융합 전문가로 성장합니다.</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mt-16 fade-in" style="transition-delay: 0.4s;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="curriculum-content" class="max-w-4xl mx-auto bg-card p-8 rounded-lg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="text-2xl font-bold mb-4 text-dark"&gt;교과목&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="grid md:grid-cols-2 gap-8 text-gray-700"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h5 class="font-bold mb-2 text-accent"&gt;1학년 1학기&lt;/h5&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;자기개발과 진로설계&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;유도, 무도기초체력, 스포츠지도 초급, 스포츠지도 중급, 트레이닝방법론&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;세계문화의 이해&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h5 class="font-bold mb-2 text-accent"&gt;1학년 2학기&lt;/h5&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;유도실습, 현장실습, 용무도, 생활체육 배드민턴&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;4차산업혁명의 이해&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h5 class="font-bold mb-2 text-accent"&gt;2학년 1학기&lt;/h5&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;무도종합실기, 전공실기, 스포츠교육학, 경호무도, 도장경영론, 호신술&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;역량강화와 창업설계, 한류문화산업의 이해&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h5 class="font-bold mb-2 text-accent"&gt;2학년 2학기&lt;/h5&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="list-disc list-inside space-y-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;li&gt;생활체육론, 스포츠마케팅, 매트 필라테스, 체육학개론, 레크레이션&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="research" class="py-20 lg:py-32 bg-card text-dark"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto px-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-16 fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="section-title mb-4"&gt;혁신을 이끄는 연구&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="max-w-3xl mx-auto text-lg text-gray-700"&gt;우리의 연구는 스포츠의 미래를 현실로 만듭니다. 세계적 수준의 교수진과 함께 인류의 삶에 기여하는 새로운 지식을 창출합니다.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-3 text-dark"&gt;AI 기반 선수 퍼포먼스 최적화&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-700"&gt;AI 모델을 통해 선수의 움직임, 생체 신호를 분석하여 개인 맞춤형 훈련 프로그램을 설계하고 경기력을 예측합니다.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay: 0.1s;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-3 text-dark"&gt;빅데이터와 팬 경험 분석&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-700"&gt;경기 데이터, 소셜 미디어 데이터를 분석하여 팬 참여를 유도하는 새로운 콘텐츠와 비즈니스 전략을 도출합니다.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay: 0.2s;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-3 text-dark"&gt;지속가능한 스포츠 장비/시설&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-700"&gt;친환경 신소재와 에너지 효율 기술을 적용하여 환경에 미치는 영향을 최소화하는 스포츠 장비와 시설을 설계합니다.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                     </span>&lt;div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay: 0.3s;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-3 text-dark"&gt;E-스포츠와 인지 능력&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-700"&gt;E-스포츠 선수의 인지 능력, 반응 속도, 스트레스 반응을 분석하여 경기력 향상과 정신 건강 관리를 연구합니다.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay: 0.4s;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-3 text-dark"&gt;무도스포츠 이용자 심리 및 행동 분석&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-700"&gt;무도 수련자들의 심리적 변화와 행동 패턴을 과학적으로 분석하여 긍정적인 가치를 창출하는 연구를 수행합니다.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay: 0.5s;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-3 text-dark"&gt;스포츠와 사회복지 연계 연구&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-700"&gt;스포츠 활동이 소외 계층의 삶의 질 향상과 사회 통합에 미치는 영향을 분석하고 실용적인 프로그램을 개발합니다.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="careers" class="py-20 lg:py-32 bg-wine text-light"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto px-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-16 fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="section-title mb-4 text-light"&gt;세상을 무대로 펼쳐질 미래&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="max-w-3xl mx-auto text-lg text-light"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>스포츠융합전공은 특정 직업에 국한되지 않는 무한한 가능성의 문을 엽니다. 졸업생들은 다양한 산업에서 혁신을 주도하는 리더로 활약하며, 특히 무도스포츠 및 사회복지 분야의 전문 자격증을 취득하여 전문가로 활동할 수 있습니다.</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="fade-in" style="transition-delay: 0.2s;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-gray-50 p-8 rounded-lg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;table class="w-full text-left table-auto text-dark"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr class="bg-gray-200 text-dark"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th class="p-4 rounded-tl-lg"&gt;분야&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th class="p-4"&gt;주요 직무&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th class="p-4"&gt;관련 자격증&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th class="p-4 rounded-tr-lg"&gt;관련 기업/기관&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr class="border-b border-gray-200"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4 font-semibold"&gt;프로 스포츠&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;퍼포먼스 분석가, 전력 분석 코치, 피지컬 코치&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;해당 없음&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;국내외 프로 구단, 국가대표 선수촌, 스포츠 에이전시&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr class="border-b border-gray-200 bg-gray-100"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4 font-semibold"&gt;헬스케어/재활&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;운동 재활 코디네이터, 임상 운동사, 디지털 헬스케어 전문가, 피트니스 컨설턴트&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;생활스포츠지도사, 건강운동관리사&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;대학병원 및 전문 재활 센터, 피트니스 체인, 헬스케어 앱 개발사, 보건 관련 공공기관&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr class="border-b border-gray-200"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4 font-semibold"&gt;미디어/콘텐츠&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;스포츠 데이터 저널리스트, 해설위원, 디지털 콘텐츠 기획자, 중계 기술 전문가&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;해당 없음&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;방송사, 디지털 스포츠 미디어, 온라인 동영상 서비스 (OTT)&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr class="border-b border-gray-200 bg-gray-100"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4 font-semibold"&gt;교육/연구&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;대학교수, 국책 연구소 연구원, 스포츠 과학 연구원&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;해당 없음&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;국내외 대학원, 한국스포츠정책과학원 (KISS), 기업 부설 연구소&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr class="border-b border-gray-200"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4 font-semibold"&gt;창업 및 기타&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;스포츠 테크 스타트업 창업, 독립 컨설턴트, 스포츠 정책 전문가&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;해당 없음&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;자체 창업, 액셀러레이터/벤처캐피탈, 국제 스포츠 기구&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr class="border-b border-gray-200 bg-gray-100"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4 font-semibold"&gt;무도스포츠&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;무도스포츠 지도사, 무도심리 상담사, 국군/경찰 무도 교관, 국제대회 심판&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;생활스포츠지도사 (무도 종목), 전문스포츠지도사 (무도 종목), 무도 단증&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;td class="p-4"&gt;무도 전문 체육관, 초중고/대학교 교사, 국군 및 경찰, 국제 무도 연맹/협회&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="facilities" class="py-20 lg:py-32 bg-card text-dark"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">             </span>&lt;div class="container mx-auto px-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-16 fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="section-title mb-4"&gt;우수한 교육 및 실습 환경&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="max-w-3xl mx-auto text-lg text-gray-700"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>학생들은 최고의 환경에서 아이디어를 현실로 만들고, 미래를 향한 실험을 계속합니다. 무도스포츠 관련 실습 및 기타 전문 실습을 위한 대형 전공 실습실과 쾌적한 학습 환경을 위한 대형 강의실을 갖추고 있습니다.</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="relative overflow-hidden rounded-lg shadow-lg group fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/600x400/5D4037/FFFFFF?text=Large+Major+Lab" alt="대형 전공 실습실" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-white text-2xl font-bold"&gt;대형 전공 실습실&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                     </span>&lt;div class="relative overflow-hidden rounded-lg shadow-lg group fade-in" style="transition-delay: 0.1s;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/600x400/00695C/FFFFFF?text=Large+Lecture+Hall" alt="대형 강의실" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-white text-2xl font-bold"&gt;대형 강의실&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">             </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer class="text-center p-6 bg-gray-800 text-white"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&amp;copy; 2026 융합전공학과. 최고의 교육으로 미래를 선도합니다.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', function () {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const mobileMenuButton = document.getElementById('mobile-menu-button');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const mobileMenu = document.getElementById('mobile-menu');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>mobileMenuButton.addEventListener('click', () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>mobileMenu.classList.toggle('hidden');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>});</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>const navLinks = document.querySelectorAll('nav a[href^="#"]');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>navLinks.forEach(anchor =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>anchor.addEventListener('click', function (e) {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>e.preventDefault();</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>const targetId = this.getAttribute('href').substring(1);</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>const targetElement = document.getElementById(targetId);</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>if (targetElement) {</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>targetElement.scrollIntoView({</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>behavior: 'smooth'</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>});</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>if(mobileMenu.classList.contains('hidden') === false){</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>mobileMenu.classList.add('hidden');</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                </span>});</p>
-<p class="p1"><span class="Apple-converted-space">            </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>const sections = document.querySelectorAll('section');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const observer = new IntersectionObserver((entries) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>entries.forEach(entry =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>if (entry.isIntersecting) {</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>entry.target.querySelectorAll('.fade-in').forEach(el =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>el.classList.add('visible');</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>});</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                </span>});</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}, { threshold: 0.1 });</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>sections.forEach(section =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>observer.observe(section);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>// 교수진 인포그래픽 스크립트</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const tooltipTitleCallback = (tooltipItems) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const item = tooltipItems[0];</p>
-<p class="p1"><span class="Apple-converted-space">                </span>let label = item.chart.data.labels[item.dataIndex];</p>
-<p class="p1"><span class="Apple-converted-space">                </span>if (Array.isArray(label)) {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>return label.join(' ');</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                </span>return label;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>const wrapLabel = (label) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const maxLength = 16;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>if (label.length &lt;= maxLength) {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>return label;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const words = label.split(' ');</p>
-<p class="p1"><span class="Apple-converted-space">                </span>let lines = [];</p>
-<p class="p1"><span class="Apple-converted-space">                </span>let currentLine = '';</p>
-<p class="p1"><span class="Apple-converted-space">                </span>words.forEach(word =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>if ((currentLine + word).length &gt; maxLength) {</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>lines.push(currentLine.trim());</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>currentLine = '';</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>currentLine += word + ' ';</p>
-<p class="p1"><span class="Apple-converted-space">                </span>});</p>
-<p class="p1"><span class="Apple-converted-space">                </span>lines.push(currentLine.trim());</p>
-<p class="p1"><span class="Apple-converted-space">                </span>return lines;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>const degreeCtx = document.getElementById('degreeChart').getContext('2d');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>new Chart(degreeCtx, {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>type: 'doughnut',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>data: {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>labels: ['박사', '석사/박사수료'],</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>datasets: [{</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>label: '학위 분포',</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>data: [3, 3],</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>backgroundColor: ['#6A0F2C', '#90516A'],</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>borderColor: '#FFFFFF',</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>borderWidth: 2</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>}]</p>
-<p class="p1"><span class="Apple-converted-space">                </span>},</p>
-<p class="p1"><span class="Apple-converted-space">                </span>options: {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>responsive: true,</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>maintainAspectRatio: false,</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>plugins: {</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>legend: {</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>position: 'bottom',</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>labels: {</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>color: '#1a202c',</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>font: {</p>
-<p class="p1"><span class="Apple-converted-space">                                    </span>size: 12</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>tooltip: {</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>callbacks: {</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>title: tooltipTitleCallback</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>const expertiseCtx = document.getElementById('expertiseChart').getContext('2d');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const expertiseLabels = ['유도', '용무도', '삼보/크라쉬', '스포츠 경영/과학', '스포츠 심리'];</p>
-<p class="p1"><span class="Apple-converted-space">            </span>new Chart(expertiseCtx, {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>type: 'bar',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>data: {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>labels: expertiseLabels.map(label =&gt; wrapLabel(label)),</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>datasets: [{</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>label: '전문가 수',</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>data: [4, 2, 2, 2, 1],</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>backgroundColor: ['#6A0F2C', '#90516A', '#BD8AA1', '#D4B4C5', '#E9D6E1'],</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>borderColor: '#FFFFFF',</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>borderWidth: 1,</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>borderRadius: 5</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>}]</p>
-<p class="p1"><span class="Apple-converted-space">                </span>},</p>
-<p class="p1"><span class="Apple-converted-space">                </span>options: {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>indexAxis: 'y',</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>responsive: true,</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>maintainAspectRatio: false,</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>scales: {</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>x: {</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>beginAtZero: true,</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>ticks: {</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>stepSize: 1,</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>color: '#1a202c'</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>},</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>grid: {</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>display: false</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>y: {</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>ticks: {</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>color: '#1a202c'</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>},</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>grid: {</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>display: true,</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>color: '#EAEAEA'</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>plugins: {</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>legend: {</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>display: false</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>tooltip: {</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>callbacks: {</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>title: tooltipTitleCallback</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>});</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+<body class="bg-gray-50 text-dark">
+
+    <header id="header" class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="#">
+                    <img src="https://i.imgur.com/PiC8T54.png" alt="김포대학교 로고" class="h-10">
+                </a>
+                <a href="#" class="text-xl font-bold text-gray-900">융합전공학과 스포츠융합전공</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#admission" class="nav-link pb-1 text-gray-900">모집개요</a>
+                <a href="#judo-techniques" class="nav-link pb-1 text-gray-900">유도기술</a>
+                <a href="#about" class="nav-link pb-1 text-gray-900">학과소개</a>
+                <a href="#faculty" class="nav-link pb-1 text-gray-900">교수진</a>
+                <a href="#curriculum" class="nav-link pb-1 text-gray-900">교육과정</a>
+                <a href="#research" class="nav-link pb-1 text-gray-900">연구분야</a>
+                <a href="#careers" class="nav-link pb-1 text-gray-900">진로전망</a>
+                <a href="#facilities" class="nav-link pb-1 text-gray-900">시설안내</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none text-gray-900">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white text-gray-900">
+            <a href="#admission" class="block py-2 px-4 text-sm hover:bg-gray-200">모집개요</a>
+            <a href="#judo-techniques" class="block py-2 px-4 text-sm hover:bg-gray-200">유도기술</a>
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-200">학과소개</a>
+            <a href="#faculty" class="block py-2 px-4 text-sm hover:bg-gray-200">교수진</a>
+            <a href="#curriculum" class="block py-2 px-4 text-sm hover:bg-gray-200">교육과정</a>
+            <a href="#research" class="block py-2 px-4 text-sm hover:bg-gray-200">연구분야</a>
+            <a href="#careers" class="block py-2 px-4 text-sm hover:bg-gray-200">진로전망</a>
+            <a href="#facilities" class="block py-2 px-4 text-sm hover:bg-gray-200">시설안내</a>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+        <div class="absolute inset-0 body-watermark" style="background-image: url('https://i.imgur.com/PiC8T54.png'); opacity: 0.05;"></div>
+        <section id="home" class="h-screen bg-cover bg-center flex items-center justify-center text-light" style="background-image: url('https://placehold.co/1920x1080/2c3e50/ffffff?text=');">
+            <div class="text-center bg-black bg-opacity-50 p-10 rounded-lg">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-light">미래 스포츠를 디자인하다</h1>
+                <p class="text-lg md:text-2xl font-light text-light">기술, 과학, 비즈니스, 그리고 무도까지 융합하여 인간의 한계를 넘어섭니다.</p>
+            </div>
+        </section>
+
+        <section id="admission" class="py-20 lg:py-32 bg-card text-dark">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="section-title mb-4 text-dark">✨ 2026학년도 신입생 모집 개요</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="card p-8 rounded-xl shadow-lg fade-in">
+                        <h3 class="text-2xl font-bold mb-4 text-dark">접수 일정</h3>
+                        <ul class="text-left text-gray-700 space-y-2">
+                            <li><strong>수시 1차:</strong> 2025.09.08(월) ~ 09.30(화)</li>
+                        </ul>
+                    </div>
+                    <div class="card p-8 rounded-xl shadow-lg fade-in" style="transition-delay: 0.2s;">
+                        <h3 class="text-2xl font-bold mb-4 text-dark">모집 인원</h3>
+                        <ul class="text-left text-gray-700 space-y-2">
+                            <li><strong>수시 1차:</strong> 50명</li>
+                        </ul>
+                    </div>
+                    <div class="card p-8 rounded-xl shadow-lg fade-in" style="transition-delay: 0.4s;">
+                        <h3 class="text-2xl font-bold mb-4 text-dark">상담 문의</h3>
+                        <ul class="text-left text-gray-700 space-y-2">
+                            <li><strong>김진성 교수:</strong> 010-3314-1047</li>
+                            <li><strong>김원오 교수:</strong> 010-3915-8702</li>
+                            <li><strong>조승권 교수:</strong> 010-9297-0524</li>
+                            <li><strong>김도연 교수:</strong> 010-8860-4829</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-8 text-center text-red-600 font-bold">
+                    <p>
+                        <strong>수시 2차 및 정시 모집 인원과 일정은 추후 공지됩니다.</strong><br>
+                        <strong>수시 최초 합격자에게는 100만 원의 노트북 또는 60만 원의 장학금을 지급하며, 국가장학금까지 함께 받으면 등록금의 거의 전액을 면제받을 수 있습니다.</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="judo-techniques" class="py-20 lg:py-32 bg-card text-dark">
+            <div class="container mx-auto px-6">
+                <header class="text-center mb-12">
+                    <h2 class="section-title mb-4 text-dark">유도 실기 시험 기술표</h2>
+                    <p class="max-w-3xl mx-auto text-lg text-gray-700">김포대학교 유도 실기 시험에 필요한 기술 분류입니다.</p>
+                </header>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 굳히기 기술 -->
+                    <div class="card fade-in">
+                        <h2 class="text-3xl font-bold text-center mb-6 text-[#6A0F2C]">굳히기 기술</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="list-title">누르기</h3>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>고쳐곁누르기</li>
+                                    <li>곁누르기</li>
+                                    <li>뒤곁누르기</li>
+                                    <li>역곁누르기</li>
+                                    <li>어깨누르기</li>
+                                    <li>위누르기</li>
+                                    <li>가로누르기</li>
+                                    <li>세로누르기</li>
+                                    <li>삼각누르기</li>
+                                    <li>위고쳐누르기</li>
+                                    <li>모로누르기</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="list-title">조르기</h3>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>외십자조르기</li>
+                                    <li>역십자조르기</li>
+                                    <li>양손조르기</li>
+                                    <li>주먹조르기</li>
+                                    <li>맨손조르기</li>
+                                    <li>안아조르기</li>
+                                    <li>죽지걸어조르기</li>
+                                    <li>삼각조르기</li>
+                                    <li>외깃안아조르기</li>
+                                    <li>소매깃잡고조르기</li>
+                                    <li>한손조르기</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="list-title">꺾기</h3>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>팔얽어비틀기</li>
+                                    <li>팔가로누워꺾기</li>
+                                    <li>어깨대팔꿈치꺾기</li>
+                                    <li>무릎대팔꺾기</li>
+                                    <li>손대팔꺾기</li>
+                                    <li>배대팔꺾기</li>
+                                    <li>다리대팔꺾기</li>
+                                    <li>겨드랑이대팔꺾기</li>
+                                    <li>삼각팔꺾기</li>
+                                    <li>다리얽어비틀기</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 메치기 기술 -->
+                    <div class="card fade-in">
+                        <h2 class="text-3xl font-bold text-center mb-6 text-[#6A0F2C]">메치기 기술</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="list-title">바로&모로누우며 메치는 기술</h3>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>배대뒤치기</li>
+                                    <li>누우면서던지기</li>
+                                    <li>안오금띄기</li>
+                                    <li>뒤집어넘기기</li>
+                                    <li>끌어누우며뒤집기</li>
+                                    <li>모로걸기</li>
+                                    <li>모로돌리기</li>
+                                    <li>모로띄기</li>
+                                    <li>오금대떨어뜨리기</li>
+                                    <li>허리안아돌리기</li>
+                                    <li>안(쪽)감아치기</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="list-title">손기술</h3>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>띄어치기</li>
+                                    <li>모로떨어뜨리기</li>
+                                    <li>어깨로메치기</li>
+                                    <li>한팔업어치기</li>
+                                    <li>업어치기</li>
+                                    <li>외깃업어치기</li>
+                                    <li>업어떨어뜨리기</li>
+                                    <li>빗당겨치기</li>
+                                    <li>외깃잡아업어후리기</li>
+                                    <li>띠잡아뒤집기</li>
+                                    <li>띠잡아떨어뜨리기</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="list-title">허리기술</h3>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>허리껴치기</li>
+                                    <li>허리띄기</li>
+                                    <li>허리후리기</li>
+                                    <li>허리채기</li>
+                                    <li>허리튀기</li>
+                                    <li>허리굴리기</li>
+                                    <li>소매들어허리채기</li>
+                                    <li>뒤허리안아메치기</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="list-title">발기술</h3>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>나오는발치기</li>
+                                    <li>발뒤축후리기</li>
+                                    <li>발뒤축걸기</li>
+                                    <li>안뒤축후리기</li>
+                                    <li>안다리후리기</li>
+                                    <li>발목받치기</li>
+                                    <li>무릎대돌리기</li>
+                                    <li>발목후리기</li>
+                                    <li>모두걸기</li>
+                                    <li>다리대돌리기</li>
+                                    <li>허리대돌리기</li>
+                                    <li>허벅다리걸기</li>
+                                    <li>밭다리후리기</li>
+                                    <li>밭다리떨어뜨리기</li>
+                                    <li>두밭다리걸기</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 lg:py-32 bg-wine text-light">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="section-title mb-4 text-light">왜 스포츠융합전공인가?</h2>
+                    <p class="max-w-3xl mx-auto text-lg text-light">
+                        4차산업혁명에 따른 기술과 정보의 융합 시대에 기존 학문간 경계를 허물고 새로운 지식과 가치를 창출할 수 있는 융합형 인재를 양성하는 것을 목표로 합니다. 특정 전공에 국한되지 않고 인문, 사회, 자연, 공학, 예술 등 다양한 분야의 지식과 기술을 통합적으로 학습할 수 있도록 설계된 맞춤형 통합 교육과정을 운영합니다.
+                    </p>
+                    <p class="max-w-3xl mx-auto text-lg text-light mt-4">
+                        융합전공학과는 Microdegree 중심으로 설계되어 학생들은 관심 있는 여러 분야의 단기 전공 과정을 이수함으로써 다학제적 전문성을 확보할 수 있습니다. 단일 전공의 틀을 넘어서 디지털 기술, 인문학, 사회과학, 경영, 디자인 등 다양한 영역을 유기적으로 연결하여 복합적인 역량을 갖춘 인재로 성장할 수 있습니다.
+                    </p>
+                    <p class="max-w-3xl mx-auto text-lg text-light mt-4">
+                        융합전공학과의 가장 큰 특징은 ‘통합’과 ‘연결’에 기반한 학문 설계입니다. 학생들은 고정된 전공의 틀에 갇히지 않고 자신의 흥미와 진로, 미래 산업 수요에 따라 여러 분야를 넘나들며 자기주도적으로 학문을 설계합니다. 이러한 융합을 통해 변화하는 사회에 유연하게 대응할 수 있는 창의적 문제해결력을 키우게 됩니다.
+                    </p>
+                </div>
+                <div class="mt-8 text-light text-base text-center fade-in">
+                    <h3 class="text-xl font-bold mb-2">무도 종목 단증 취득 및 진로</h3>
+                    <p>무도 종목 단증 취득이 가능하며, 졸업 후 다양한 분야로 취업 및 창업할 수 있습니다.</p>
+                    <ul class="list-disc list-inside space-y-1 mx-auto max-w-2xl mt-4">
+                        <li>2년제 졸업 시: 유도, 용무도, 크라쉬, 삼보, 킥복싱, 특공무술 등 총 14단 이상 승단이 가능합니다.</li>
+                        <li>4년제 심화과정 졸업 시: 동일 무도 종목으로 3~4단까지 승단이 가능합니다.</li>
+                        <li>이를 통해 무도 지도자, 경호원 등 다양한 분야로 취업 및 창업할 수 있습니다.</li>
+                        <li>각 무도 종목의 승단자는 대회에 참가하여 입상 시 교수님들의 후원으로 대회 입상 장학금(연말 일괄 지급)을 받을 수 있습니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 교수진 인포그래픽 섹션 -->
+        <section id="faculty" class="py-20 lg:py-32 bg-card text-dark">
+            <div class="container mx-auto px-6">
+                <header class="text-center mb-12 fade-in">
+                    <h2 class="text-4xl md:text-6xl font-black gradient-text mb-2">김포대학교 명품 교수진</h2>
+                    <p class="text-lg text-gray-700">무도 및 스포츠 과학 분야를 선도하는 최고의 전문가들</p>
+                </header>
+
+                <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center fade-in">
+                    <div class="card justify-center items-center">
+                        <h3 class="text-2xl font-bold text-dark mb-2">총 교수진</h3>
+                        <p class="text-6xl font-extrabold text-accent">6<span class="text-3xl ml-1">명</span></p>
+                        <p class="text-gray-700 mt-2">각 분야 최고의 전문가</p>
+                    </div>
+                    <div class="card justify-center items-center">
+                        <h3 class="text-2xl font-bold text-dark mb-2">총 보유 단 수</h3>
+                        <p class="text-6xl font-extrabold text-accent">51<span class="text-3xl ml-1">단</span></p>
+                        <p class="text-gray-700 mt-2">유도, 용무도, 삼보 등 합산</p>
+                    </div>
+                    <div class="card justify-center items-center">
+                        <h3 class="text-2xl font-bold text-dark mb-2">학위 분포</h3>
+                        <div class="chart-container">
+                            <canvas id="degreeChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-16 fade-in">
+                    <h2 class="text-3xl font-bold text-center mb-10 text-dark">교수진 프로필</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="card">
+                            <div class="flex justify-center items-center mb-4">
+                                <img src="https://i.imgur.com/5zbALe7.jpeg" alt="이상규 교수 사진" class="w-32 h-32 rounded-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-center text-accent">이상규 교수</h3>
+                            <div class="text-left text-sm flex-grow mt-4">
+                                <h4 class="font-semibold text-accent border-b pb-1 mb-2">경력</h4>
+                                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                    <li>부서장</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="flex justify-center items-center mb-4">
+                                <img src="https://i.imgur.com/ZdCaIDE.jpeg" alt="반재근 교수 사진" class="w-32 h-32 rounded-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-center text-accent">반재근 교수</h3>
+                            <div class="text-left text-sm flex-grow mt-4">
+                                <h4 class="font-semibold text-accent border-b pb-1 mb-2">학력</h4>
+                                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                    <li>체육학 박사</li>
+                                </ul>
+                                <h4 class="font-semibold text-accent border-b pb-1 mb-2 mt-4">경력</h4>
+                                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                    <li>성남시체육회 스포츠공정 위원장</li>
+                                    <li>(사)한국스포츠복지진흥회 총재</li>
+                                    <li>(사)한국스포츠마사지협회 자문위원</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="flex justify-center items-center mb-4">
+                                <img src="https://i.imgur.com/g91j4Uq.jpeg" alt="김진성 교수 사진" class="w-32 h-32 rounded-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-center text-accent">김진성 교수</h3>
+                            <div class="text-left text-sm flex-grow mt-4">
+                                <h4 class="font-semibold text-accent border-b pb-1 mb-2">학력</h4>
+                                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                    <li>용인대학교 유도학과 졸업</li>
+                                    <li>용인대학교 경영학 석사</li>
+                                    <li>선문대학교 체육학 박사</li>
+                                </ul>
+                                <h4 class="font-semibold text-accent border-b pb-1 mb-2 mt-4">경력</h4>
+                                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                    <li>유도 7단, 용무도 7단</li>
+                                    <li>유도심판 1급, 지도자 1급</li>
+                                    <li>스포츠심리상담사 3급</li>
+                                    <li>경기조 크라쉬 연맹 회장</li>
+                                    <li>메가유도클럽 대표</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="flex justify-center items-center mb-4">
+                                <img src="https://i.imgur.com/9HiFbPS.png" alt="김원오 교수 사진" class="w-32 h-32 rounded-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-center text-accent">김원오 교수</h3>
+                            <div class="text-left text-sm flex-grow mt-4">
+                                <h4 class="font-semibold text-accent border-b pb-1 mb-2">학력</h4>
+                                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                    <li>용인대학교 유도학과 졸업</li>
+                                    <li>스포츠대학원 석사</li>
+                                    <li>선문대학교 체육학 박사</li>
+                                </ul>
+                                <h4 class="font-semibold text-accent border-b pb-1 mb-2 mt-4">경력</h4>
+                                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                    <li>유도 7단, 용무도 7단</li>
+                                    <li>현) 여가복지진흥회 감사</li>
+                                    <li>현) 서울시 용무도협회 국제심판</li>
+                                    <li>현) 대한용무도협회 심판위원장</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="flex justify-center items-center mb-4">
+                                <img src="https://i.imgur.com/5A3mUmU.jpeg" alt="조승권 교수 사진" class="w-32 h-32 rounded-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-center text-accent">조승권 교수</h3>
+                            <div class="text-left text-sm flex-grow mt-4">
+                                <h4 class="font-semibold text-accent border-b pb-1 mb-2">학력</h4>
+                                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                    <li>용인대학교 유도학과 졸업</li>
+                                    <li>용인대학교 체육교육학과 석사</li>
+                                    <li>용인대학교 무도학 박사 수료</li>
+                                </ul>
+                                <h4 class="font-semibold text-accent border-b pb-1 mb-2 mt-4">경력</h4>
+                                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                    <li>유도 5단, 삼보 5단</li>
+                                    <li>유도 1급 심판, 지도자 1급</li>
+                                    <li>2011 세계군인유도선수권대회 개인전 3위</li>
+                                    <li>제92회 전국체육대회 개인전 2위</li>
+                                    <li>2012 춘계실업유도선수권대회 개인전 1위</li>
+                                    <li>경기도삼보연맹 회장</li>
+                                    <li>파이널유도멀티짐 프렌차이즈 대표</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="flex justify-center items-center mb-4">
+                                <img src="https://i.imgur.com/cZn5mC7.jpeg" alt="김도연 교수 사진" class="w-32 h-32 rounded-full object-cover">
+                            </div>
+                            <h3 class="text-xl font-bold text-center text-accent">김도연 교수</h3>
+                            <div class="text-left text-sm flex-grow mt-4">
+                                <h4 class="font-semibold text-accent border-b pb-1 mb-2">학력</h4>
+                                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                    <li>용인대학교 유도학과 졸업</li>
+                                    <li>성균관대학교 스포츠경영 석사</li>
+                                    <li>성균관대학교 스포츠경영 박사 수료</li>
+                                </ul>
+                                <h4 class="font-semibold text-accent border-b pb-1 mb-2 mt-4">경력</h4>
+                                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                    <li>유도 5단, 삼보 4단, 크라쉬 4단</li>
+                                    <li>유도 2급 심판, 지도자 1급</li>
+                                    <li>전) 한국스포츠개발원 연구원</li>
+                                    <li>前 고려대학교 체육과 외래교수</li>
+                                    <li>前 서울시 생활체육 유도 지도자협의회 총무이사</li>
+                                    <li>아레나유도멀티짐 대표</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-16 fade-in">
+                    <h2 class="text-3xl font-bold text-center mb-10 text-dark">교수진 전문 분야</h2>
+                    <div class="card">
+                        <p class="text-center text-gray-700 mb-4">교수진의 전문성은 전통 무도부터 현대 스포츠 과학까지 아우릅니다. 아래 차트는 각 분야에 대한 교수진의 분포를 보여줍니다.</p>
+                        <div class="chart-container">
+                            <canvas id="expertiseChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section id="curriculum" class="py-20 lg:py-32 bg-wine text-light">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="section-title mb-4 text-light">성장을 위한 교육과정</h2>
+                    <p class="max-w-3xl mx-auto text-lg text-light">
+                        기초부터 심화까지, 이론과 실습이 조화된 체계적인 교육과정을 통해 융합 전문가로 성장합니다.
+                    </p>
+                </div>
+
+                <div class="mt-16 fade-in" style="transition-delay: 0.4s;">
+                    <div id="curriculum-content" class="max-w-4xl mx-auto bg-card p-8 rounded-lg">
+                        <h4 class="text-2xl font-bold mb-4 text-dark">교과목</h4>
+                        <div class="grid md:grid-cols-2 gap-8 text-gray-700">
+                            <div>
+                                <h5 class="font-bold mb-2 text-accent">1학년 1학기</h5>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>자기개발과 진로설계</li>
+                                    <li>유도, 무도기초체력, 스포츠지도 초급, 스포츠지도 중급, 트레이닝방법론</li>
+                                    <li>세계문화의 이해</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-bold mb-2 text-accent">1학년 2학기</h5>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>유도실습, 현장실습, 용무도, 생활체육 배드민턴</li>
+                                    <li>4차산업혁명의 이해</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-bold mb-2 text-accent">2학년 1학기</h5>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>무도종합실기, 전공실기, 스포츠교육학, 경호무도, 도장경영론, 호신술</li>
+                                    <li>역량강화와 창업설계, 한류문화산업의 이해</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-bold mb-2 text-accent">2학년 2학기</h5>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>생활체육론, 스포츠마케팅, 매트 필라테스, 체육학개론, 레크레이션</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="py-20 lg:py-32 bg-card text-dark">
+            <div class="container mx-auto px-6">
+                <header class="text-center mb-12 fade-in">
+                    <h2 class="text-4xl md:text-6xl font-black gradient-text mb-2">혁신을 이끄는 연구</h2>
+                    <p class="max-w-3xl mx-auto text-lg text-gray-700">우리의 연구는 스포츠의 미래를 현실로 만듭니다. 세계적 수준의 교수진과 함께 인류의 삶에 기여하는 새로운 지식을 창출합니다.</p>
+                </header>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in">
+                        <h3 class="text-xl font-bold mb-3 text-dark">AI 기반 선수 퍼포먼스 최적화</h3>
+                        <p class="text-gray-700">AI 모델을 통해 선수의 움직임, 생체 신호를 분석하여 개인 맞춤형 훈련 프로그램을 설계하고 경기력을 예측합니다.</p>
+                    </div>
+                    <div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay: 0.1s;">
+                        <h3 class="text-xl font-bold mb-3 text-dark">빅데이터와 팬 경험 분석</h3>
+                        <p class="text-gray-700">경기 데이터, 소셜 미디어 데이터를 분석하여 팬 참여를 유도하는 새로운 콘텐츠와 비즈니스 전략을 도출합니다.</p>
+                    </div>
+                    <div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay: 0.2s;">
+                        <h3 class="text-xl font-bold mb-3 text-dark">지속가능한 스포츠 장비/시설</h3>
+                        <p class="text-gray-700">친환경 신소재와 에너지 효율 기술을 적용하여 환경에 미치는 영향을 최소화하는 스포츠 장비와 시설을 설계합니다.</p>
+                    </div>
+                     <div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay: 0.3s;">
+                        <h3 class="text-xl font-bold mb-3 text-dark">E-스포츠와 인지 능력</h3>
+                        <p class="text-gray-700">E-스포츠 선수의 인지 능력, 반응 속도, 스트레스 반응을 분석하여 경기력 향상과 정신 건강 관리를 연구합니다.</p>
+                    </div>
+                    <div class="card p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in" style="transition-delay: 0.4s;">
+                        <h3 class="text-xl font-bold mb-3 text-dark">무도스포츠 이용자 심리 및 행동 분석</h3>
+                        <p class="text-gray-700">무도 수련자들의 심리적 변화와 행동 패턴을 과학적으로 분석하여 긍정적인 가치를 창출하는 연구를 수행합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="careers" class="py-20 lg:py-32 bg-wine text-light">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="section-title mb-4 text-light">세상을 무대로 펼쳐질 미래</h2>
+                    <p class="max-w-3xl mx-auto text-lg text-light">
+                        스포츠융합전공은 특정 직업에 국한되지 않는 무한한 가능성의 문을 엽니다. 졸업생들은 다양한 산업에서 혁신을 주도하는 리더로 활약하며, 특히 무도스포츠 분야의 전문 자격증을 취득하여 전문가로 활동할 수 있습니다.
+                    </p>
+                </div>
+                <div class="fade-in" style="transition-delay: 0.2s;">
+                    <div class="bg-gray-50 p-8 rounded-lg">
+                        <table class="w-full text-left table-auto text-dark">
+                            <thead>
+                                <tr class="bg-gray-200 text-dark">
+                                    <th class="p-4 rounded-tl-lg">분야</th>
+                                    <th class="p-4">주요 직무</th>
+                                    <th class="p-4">관련 자격증</th>
+                                    <th class="p-4 rounded-tr-lg">관련 기업/기관</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-200">
+                                    <td class="p-4 font-semibold">프로 스포츠</td>
+                                    <td class="p-4">퍼포먼스 분석가, 전력 분석 코치, 피지컬 코치</td>
+                                    <td class="p-4">해당 없음</td>
+                                    <td class="p-4">국내외 프로 구단, 국가대표 선수촌, 스포츠 에이전시</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 bg-gray-100">
+                                    <td class="p-4 font-semibold">헬스케어/재활</td>
+                                    <td class="p-4">운동 재활 코디네이터, 임상 운동사, 디지털 헬스케어 전문가, 피트니스 컨설턴트</td>
+                                    <td class="p-4">생활스포츠지도사, 건강운동관리사</td>
+                                    <td class="p-4">대학병원 및 전문 재활 센터, 피트니스 체인, 헬스케어 앱 개발사, 보건 관련 공공기관</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="p-4 font-semibold">미디어/콘텐츠</td>
+                                    <td class="p-4">스포츠 데이터 저널리스트, 해설위원, 디지털 콘텐츠 기획자, 중계 기술 전문가</td>
+                                    <td class="p-4">해당 없음</td>
+                                    <td class="p-4">방송사, 디지털 스포츠 미디어, 온라인 동영상 서비스 (OTT)</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 bg-gray-100">
+                                    <td class="p-4 font-semibold">교육/연구</td>
+                                    <td class="p-4">대학교수, 국책 연구소 연구원, 스포츠 과학 연구원</td>
+                                    <td class="p-4">해당 없음</td>
+                                    <td class="p-4">국내외 대학원, 한국스포츠정책과학원 (KISS), 기업 부설 연구소</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="p-4 font-semibold">창업 및 기타</td>
+                                    <td class="p-4">스포츠 테크 스타트업 창업, 독립 컨설턴트, 스포츠 정책 전문가</td>
+                                    <td class="p-4">해당 없음</td>
+                                    <td class="p-4">자체 창업, 액셀러레이터/벤처캐피탈, 국제 스포츠 기구</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 bg-gray-100">
+                                    <td class="p-4 font-semibold">무도스포츠</td>
+                                    <td class="p-4">무도스포츠 지도사, 무도심리 상담사, 국군/경찰 무도 교관, 국제대회 심판</td>
+                                    <td class="p-4">생활스포츠지도사 (무도 종목), 전문스포츠지도사 (무도 종목), 무도 단증</td>
+                                    <td class="p-4">무도 전문 체육관, 초중고/대학교 교사, 국군 및 경찰, 국제 무도 연맹/협회</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-semibold rounded-bl-lg">사회복지</td>
+                                    <td class="p-4">스포츠복지사, 건강관리 전담 사회복지사, 지역사회 복지 프로그램 기획자</td>
+                                    <td class="p-4">사회복지사 2급 자격증</td>
+                                    <td class="p-4 rounded-br-lg">사회복지관, 지자체 복지 관련 부서, 스포츠 NGO, 재활 시설</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="facilities" class="py-20 lg:py-32 bg-card text-dark">
+             <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="section-title mb-4">우수한 교육 및 실습 환경</h2>
+                    <p class="max-w-3xl mx-auto text-lg text-gray-700">
+                        학생들은 최고의 환경에서 아이디어를 현실로 만들고, 미래를 향한 실험을 계속합니다. 무도스포츠 관련 실습 및 기타 전문 실습을 위한 대형 전공 실습실과 쾌적한 학습 환경을 위한 대형 강의실을 갖추고 있습니다.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group fade-in">
+                        <img src="https://placehold.co/600x400/5D4037/FFFFFF?text=Large+Major+Lab" alt="대형 전공 실습실" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-6">
+                            <h3 class="text-white text-2xl font-bold">대형 전공 실습실</h3>
+                        </div>
+                    </div>
+                     <div class="relative overflow-hidden rounded-lg shadow-lg group fade-in" style="transition-delay: 0.1s;">
+                        <img src="https://placehold.co/600x400/00695C/FFFFFF?text=Large+Lecture+Hall" alt="대형 강의실" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-6">
+                            <h3 class="text-white text-2xl font-bold">대형 강의실</h3>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </section>
+    </main>
+
+    <footer class="text-center p-6 bg-gray-800 text-white">
+        <p>&copy; 2024 융합전공학과. 최고의 교육으로 미래를 선도합니다.</p>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            navLinks.forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    if(mobileMenu.classList.contains('hidden') === false){
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.querySelectorAll('.fade-in').forEach(el => {
+                            el.classList.add('visible');
+                        });
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // 교수진 인포그래픽 스크립트
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+
+            const wrapLabel = (label) => {
+                const maxLength = 16;
+                if (label.length <= maxLength) {
+                    return label;
+                }
+                const words = label.split(' ');
+                let lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + word).length > maxLength) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const degreeCtx = document.getElementById('degreeChart').getContext('2d');
+            new Chart(degreeCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['박사', '석사/박사수료'],
+                    datasets: [{
+                        label: '학위 분포',
+                        data: [3, 3],
+                        backgroundColor: ['#6A0F2C', '#90516A'],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#1a202c',
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    }
+                }
+            });
+
+            const expertiseCtx = document.getElementById('expertiseChart').getContext('2d');
+            const expertiseLabels = ['유도', '용무도', '삼보/크라쉬', '스포츠 경영/과학', '스포츠 심리'];
+            new Chart(expertiseCtx, {
+                type: 'bar',
+                data: {
+                    labels: expertiseLabels.map(label => wrapLabel(label)),
+                    datasets: [{
+                        label: '전문가 수',
+                        data: [4, 2, 2, 2, 1],
+                        backgroundColor: ['#6A0F2C', '#90516A', '#BD8AA1', '#D4B4C5', '#E9D6E1'],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 1,
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1,
+                                color: '#1a202c'
+                            },
+                            grid: {
+                                display: false
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                color: '#1a202c'
+                            },
+                            grid: {
+                                display: true,
+                                color: '#EAEAEA'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
